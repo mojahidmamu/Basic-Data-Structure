@@ -10,9 +10,20 @@ int main()
         cin >> arr[i];
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < q; i++)
     {
-        if (arr[i] == q)
+        int x;
+        cin >> x;
+        int flag = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (arr[i] == x)
+            {
+                flag = 1;
+            }
+        }
+
+        if (flag == 1)
         {
             cout << "found" << endl;
         }
