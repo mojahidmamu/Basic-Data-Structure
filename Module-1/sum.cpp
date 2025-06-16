@@ -7,7 +7,7 @@ int main()
     int sum = 0;
 
     // using Formula: 
-    sum = (n*(n-1))/2;
+    // sum = (n*(n-1))/2;
 
     // using loop
     // for (int i = 1; i < n; i++)
