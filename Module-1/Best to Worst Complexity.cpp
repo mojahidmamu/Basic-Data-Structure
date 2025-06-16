@@ -1,7 +1,10 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    
-    return 0;
-}
+/*
+
+Constant:     O(1)
+Linear:       O(N)
+Logarithmic:  O(lonN)
+square root:  O(sqrt(N))
+quadratic:    O(N*N)
+Linearithmic: O(NlogN)
+
+*/
