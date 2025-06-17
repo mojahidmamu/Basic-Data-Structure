@@ -19,3 +19,4 @@ int main()
     cout << sum << endl;
     return 0;
 }
+// O(N*N)
