@@ -7,7 +7,7 @@ int main()
     v2 = v; // value assign
     // v2.pop_back(); // remove last element
     v2.insert(v2.begin() + 2, 10);      // add element in specific position
-    v2.erase(v2.begin() + 1, v2.end()); // delete from specific position
+    v2.erase(v2.begin() + 1, v2.end()); // delete from specific position(starting poing, ending point)
     for (int i = 0; i < v2.size(); i++)
     {
         cout << v2[i] << " ";
