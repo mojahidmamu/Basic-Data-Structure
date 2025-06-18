@@ -2,7 +2,6 @@
 using namespace std;
 int main()
 {
-    // this is second module of Basic Data_Structure
-    // So be careful.
+    
     return 0;
 }
