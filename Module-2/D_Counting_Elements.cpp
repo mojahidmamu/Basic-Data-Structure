@@ -13,11 +13,16 @@ int main()
     int count = 0;
     for (int i = 0; i < n; i++)
     {
-        if (v[i + 1] == v[i])
+        for (int j = 0; j < n; j++)
         {
-            count++;
+            if (v[j] == v[i] + 1)
+            {
+                count++;
+                break;
+            }
         }
     }
+
     cout << count << endl;
 
     return 0;
