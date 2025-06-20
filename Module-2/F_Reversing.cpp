@@ -10,11 +10,20 @@ int main()
         cin >> v[i];
     }
 
-    for (int i = 0; i < n; i++)
+    int i = 0, j = n - 1;
+    while (i < j)
     {
-        cin >> v[i];
+        int temp = v[i];
+        v[i] = v[j];
+        v[j] = temp;
+        i++;
+        j--;
     }
 
-    
+    for (int i = 0; i < n; i++)
+    {
+        cout << v[i] << " ";
+    }
+
     return 0;
 }
