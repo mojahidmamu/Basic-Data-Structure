@@ -18,9 +18,12 @@ int main()
         {
             cout << i << " ";
         }
-        
+        // else if (arr[i] != target)
+        // {
+        //     cout << "-1 -1";
+        //     break;
+        // }
     }
-    
-    
+
     return 0;
 }
