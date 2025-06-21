@@ -1,0 +1,1 @@
+{"name":"Local: Rotatef_Image","url":"d:\\PHITRON\\Basic Data Structure\\LeetCode_Practice\\Rotatef_Image.cpp","tests":[{"id":1750476491506,"input":"3 3\n1 2 3\n4 5 6\n7 8 9","output":"7 4 1\n8 5 2\n9 6 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PHITRON\\Basic Data Structure\\LeetCode_Practice\\Rotatef_Image.cpp","group":"local","local":true}
