@@ -2,23 +2,24 @@
 using namespace std;
 int main()
 {
-    int n, m;
-    cin >> n, m;
-    int arr[n][m];
-    for (int i = 0; i < n; i++)
+    int row, col;
+    cin >> row >> col;
+    int arr[row][col];
+    for (int i = 0; i < row; i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < col; j++)
         {
             cin >> arr[i][j];
         }
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = row-1; i >= 0; i--)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < col; j++)
         {
-           cout  << arr[i][j] << " ";
+            cout << arr[i][j] << " ";
         }
+        cout << endl;
     }
 
     return 0;
