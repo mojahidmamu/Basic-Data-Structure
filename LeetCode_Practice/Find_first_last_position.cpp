@@ -4,17 +4,20 @@ int main()
 {
     int n;
     cin >> n;
-    int arr[n];
+    // int arr[n];
+    vector<int> v(n);
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        // cin >> arr[i];
+        cin >> v[i];
     }
     int target;
     cin >> target;
 
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] == target)
+        // if (arr[i] == target)
+        if (v[i] == target)
         {
             cout << i << " ";
         }
@@ -24,6 +27,10 @@ int main()
         //     break;
         // }
     }
-
     return 0;
 }
+
+
+
+
+
