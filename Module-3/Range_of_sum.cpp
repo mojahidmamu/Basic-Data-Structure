@@ -9,15 +9,34 @@ int main()
     {
         cin >> arr[i];
     }
+
+    // Prefix Sum: for decreasing time complexity>>>
+    int pre[N + 1];
+    pre[1] = arr[1];
+    for (int i = 2; i <= N; i++)
+    {
+        pre[i] = pre[i - 1] + arr[i];
+    }
+
     while (Q--) // O(Q)
     {
         int L, R;
         cin >> L >> R;
-        int sum = 0;
-        for (int i = L; i <= R; i++) //O(n) 
+        int sum;
+        if (L == 1)
         {
-            sum += arr[i]; // TLE-> (Time Limit Execured) in this loop
+            sum = pre[R];
         }
+        else
+        {
+            sum = pre[R] - pre[L - 1];// this is main law of Prefix of Sum: 
+        }
+
+        // int sum = 0;
+        // for (int i = L; i <= R; i++) //O(n)
+        // {
+        //     sum += arr[i]; // TLE-> (Time Limit Execured) in this loop
+        // }
         cout << sum << endl;
     }
     return 0;
