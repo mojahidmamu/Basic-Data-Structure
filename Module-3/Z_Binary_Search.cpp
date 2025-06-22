@@ -50,3 +50,4 @@ int main()
 
     return 0;
 }
+// This is with (Binary Search):
