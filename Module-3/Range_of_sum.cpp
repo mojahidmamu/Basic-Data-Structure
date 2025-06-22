@@ -31,13 +31,14 @@ int main()
         {
             sum = pre[R] - pre[L - 1];// this is main law of Prefix of Sum: 
         }
+        cout << sum << endl;
 
         // int sum = 0;
         // for (int i = L; i <= R; i++) //O(n)
         // {
         //     sum += arr[i]; // TLE-> (Time Limit Execured) in this loop
         // }
-        cout << sum << endl;
+        // cout << sum << endl;
     }
     return 0;
 }
