@@ -42,7 +42,7 @@ int main()
         {
             cout << "found" << endl;
         }
-        else           // if flag is not found
+        else // if flag is not found
         {
             cout << "not found" << endl;
         }
