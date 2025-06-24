@@ -10,12 +10,27 @@ int main()
     {
         cin >> arr[i];
     }
+    // sort ->
+    sort(arr, arr + N);
+
     int Q;
     cin >> Q;
     while (Q--)
     {
         int X;
         cin >> X;
+        int flag = 0;
+
+        // Binary Search: 
+
+        if (flag == 1)
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
     }
 
     return 0;
