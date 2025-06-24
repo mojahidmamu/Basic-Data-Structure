@@ -8,6 +8,6 @@ int main()
         cout << k << endl;
         k = k * 2;
     }
-
     return 0;
 }
+// O(logN)
