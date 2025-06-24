@@ -21,7 +21,25 @@ int main()
         cin >> X;
         int flag = 0;
 
-        // Binary Search: 
+        // Binary Search:
+        int low = 0, high = N - 1;
+        while (low <= high)
+        {
+            int mid_index = (low + high) / 2;
+            if (arr[mid_index] == X)
+            {
+                flag = 1;
+                break;
+            }
+            else if (arr[mid_index] < X)
+            {
+                low = mid_index + 1;
+            }
+            else if (arr[mid_index] > X)
+            {
+                high = mid_index - 1;
+            }
+        }
 
         if (flag == 1)
         {
