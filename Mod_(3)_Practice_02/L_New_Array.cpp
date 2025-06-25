@@ -9,16 +9,19 @@ int main()
     {
         cin >> Arr[i];
     }
+
     int Brr[N];
     for (int i = 0; i < N; i++)
     {
         cin >> Brr[i];
     }
 
-    //  Concatanation: 
-    
-
+    //  Concatanation:
     int Crr[2 * N];
+
+    copy(Brr, Brr + N, Crr);
+    copy(Arr, Arr + N, Crr + N);
+
     for (int i = 0; i < N * 2; i++)
     {
         cout << Crr[i] << " ";
