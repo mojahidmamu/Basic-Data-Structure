@@ -11,9 +11,16 @@ int main()
     }
 
     int flag = 0;
-    for (int i = 0; i < N; i++)
+
+    for (int i = 0; i < N - 1; i++)
     {
-        /* code */
+        for (int j = i + 1; j < N; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                flag = 1;
+            }
+        }
     }
 
     if (flag == 1)
