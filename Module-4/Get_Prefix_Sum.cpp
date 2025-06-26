@@ -4,16 +4,26 @@ int main()
 {
     int N;
     cin >> N;
-    int arr[N];
+    long long int arr[N];
     for (int i = 0; i < N; i++)
     {
         cin >> arr[i];
     }
 
-    reverse(arr, arr + N); // reverse
+    
+   long long int prefix[N];
+    prefix[0] = arr[0];
+    for (int i = 1; i < N; i++)
+    {
+        prefix[i] = prefix[i-1] + arr[i];
+    }
+    
+    reverse(prefix, prefix + N); // reverse
+
+
     for (int i = 0; i < N; i++)
     {
-        cout << arr[i] << " ";
+        cout << prefix[i] << " ";
     }
 
     return 0;
