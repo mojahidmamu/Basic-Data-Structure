@@ -22,17 +22,7 @@ int main()
                 flag = 1;
             }
     }
-    // int i = 0, j = N - 1;
-    // while (i < j)
-    // {
-    //     if (arr[i] == arr[j])
-    //     {
-    //         flag = 1;
-    //     }
-
-    //     i++;
-    //     j--;
-    // }
+     
 
     if (flag == 1)
     {
@@ -45,3 +35,4 @@ int main()
 
     return 0;
 }
+// Accepted: 
