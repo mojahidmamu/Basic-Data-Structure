@@ -2,27 +2,25 @@
 using namespace std;
 int main()
 {
-    // input first array:
-    vector<int> N;
-    cin >> N; // input->N
-    int A[N];
+    int N;
+    cin >> N;
+    vector<int> A(N);
     for (int i = 0; i < N; i++)
     {
         cin >> A[i];
     }
-    // input second array:
-    vector<int> M;
-    cin >> M; // input->M
-    int B[M];
+    int M;
+    cin >> M;
+    vector<int> B(M);
     for (int i = 0; i < M; i++)
     {
         cin >> B[i];
     }
-    //
-    vector<int> index;
-    cin >> index; // input index:
+    int index;
+    cin >> index;
 
-    A.insert(A.begin() + index, B);
+    // insert: function
+    A.insert(A.begin() + index, B.begin(), B.end());
 
     for (int i = 0; i < N + M; i++)
     {
