@@ -14,27 +14,27 @@ int main()
 
     int flag = 0;
 
-    // for (int i = 0; i < N - 1; i++)
-    // {
-    //     for (int j = i + 1; j < N; j++)
-    //     {
-    //         if (arr[i] == arr[j])
-    //         {
-    //             flag = 1;
-    //         }
-    //     }
-    // }
-    int i = 0, j = N - 1;
-    while (i < j)
+    for (int i = 0; i < N - 1; i++)
     {
-        if (arr[i] == arr[j])
+        for (int j = i + 1; j < N; j++)
         {
-            flag = 1;
+            if (arr[i] == arr[j])
+            {
+                flag = 1;
+            }
         }
-
-        i++;
-        j--;
     }
+    // int i = 0, j = N - 1;
+    // while (i < j)
+    // {
+    //     if (arr[i] == arr[j])
+    //     {
+    //         flag = 1;
+    //     }
+
+    //     i++;
+    //     j--;
+    // }
 
     if (flag == 1)
     {
