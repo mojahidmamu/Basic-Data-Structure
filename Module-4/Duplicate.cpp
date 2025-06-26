@@ -14,15 +14,13 @@ int main()
 
     int flag = 0;
 
-    for (int i = 0; i < N - 1; i++)
+    for (int i = 1; i < N ; i++)
     {
-        for (int j = i + 1; j < N; j++)
-        {
-            if (arr[i] == arr[j])
+         
+            if (arr[i] == arr[i-1])
             {
                 flag = 1;
             }
-        }
     }
     // int i = 0, j = N - 1;
     // while (i < j)
