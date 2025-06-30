@@ -8,7 +8,6 @@ public:
 
     Node(int val) // constructor এ value টা নিচ্ছি।
     {
-
         this->val = val;   // value টা class variable এ assign করছি।
         this->next = NULL; // যেহেতু প্রতিটি nodeই আলাদা তাই by default zero/NULL set করে দিচ্ছি।
     }
