@@ -1,7 +1,7 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void fun(int *p) //  pass-by-value;
+void fun(int *&p) //  pass-by-reference;
 {
     p = NULL;
 }
@@ -12,8 +12,15 @@ int main()
 
     fun(p);
 
-    cout << p << endl;
-    cout << *p << endl;
+    if (p == NULL)
+    {
+        cout << "NULL" << endl;
+    }
+    else{
+        cout << p << endl;
+        // cout << *p << endl;
+    }
+    
 
     return 0;
 }
