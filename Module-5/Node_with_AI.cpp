@@ -37,7 +37,7 @@ void display(Node *head)
     Node *tmp = head;
     while (tmp != nullptr)
     {
-        cout << tmp->val << " ";
+        cout << tmp->val << " -> ";
         tmp = tmp->next;
     }
     cout << "NULL" << endl;
