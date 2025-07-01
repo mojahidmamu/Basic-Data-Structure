@@ -27,3 +27,4 @@ int main()
     cout << a.next->next->val << endl;
     return 0;
 }
+
