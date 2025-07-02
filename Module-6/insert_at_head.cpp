@@ -12,14 +12,14 @@ public:
     }
 };
 
-void insert_at_head(Node *head, int val)
+void insert_at_head(Node *&head, int val)
 {
     Node *newNode = new Node(val);
     newNode->next = head;
     head = newNode;
 }
 
-// print: 
+// print:
 void print_linked_list(Node *head)
 {
     Node *tmp = head;
@@ -28,19 +28,20 @@ void print_linked_list(Node *head)
         cout << tmp->val << endl;
         tmp = tmp->next;
     }
-    
 }
 
 int main()
 {
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(20);
+    Node *b = new Node(30);
 
     head->next = a;
     a->next = b;
 
     insert_at_head(head, 100);
+    insert_at_head(head, 200);
+    insert_at_head(head, 300);
     print_linked_list(head);
 
     return 0;
