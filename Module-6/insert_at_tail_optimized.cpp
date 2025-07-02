@@ -38,10 +38,10 @@ int main()
 {
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(30);
+    Node *tail = new Node(30);
 
     head->next = a;
-    a->next = b;
+    a->next = tail;
 
     insert_at_tail(head, 40);
     insert_at_tail(head, 50);
