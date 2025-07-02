@@ -1,4 +1,4 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 class Node
 {
@@ -15,6 +15,12 @@ public:
 void insert_at_tail(Node *&head, int val)
 {
     Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    // ////
     Node *tmp = head;
     while (tmp->next != NULL)
     {
@@ -32,20 +38,26 @@ void print_linked_list(Node *head)
         cout << tmp->val << endl;
         tmp = tmp->next;
     }
+    cout << endl;
 }
 
 int main()
 {
-    Node *head = new Node(10);
-    Node *a = new Node(20);
-    Node *b = new Node(30);
+    Node *head = NULL;
+    int x;
+    while (1)
+    {
+        cin >> x;
+        if (x == -1)
+        {
+            insert_at_tail(head, x);
+        }
+        else
+        {
+            break;
+        }
+    }
 
-    head->next = a;
-    a->next = b;
-
-    insert_at_tail(head, 40);
-    insert_at_tail(head, 50);
-    insert_at_tail(head, 60);
     print_linked_list(head);
 
     return 0;
