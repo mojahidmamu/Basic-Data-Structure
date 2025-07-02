@@ -12,11 +12,15 @@ public:
     }
 };
 
-void insert_at_head(Node *&head, int val)
+void insert_at_tail(Node *&head, int val)
 {
     Node *newNode = new Node(val);
-    newNode->next = head;
-    head = newNode;
+    Node *tmp = head;
+    while (tmp->next != NULL)
+    {
+        tmp = tmp->next;
+    }
+    tmp->next = newNode;
 }
 
 // print:
@@ -39,9 +43,9 @@ int main()
     head->next = a;
     a->next = b;
 
-    insert_at_head(head, 100);
-    insert_at_head(head, 200);
-    insert_at_head(head, 300);
+    insert_at_tail(head, 40);
+    insert_at_tail(head, 50);
+    insert_at_tail(head, 60);
     print_linked_list(head);
 
     return 0;
