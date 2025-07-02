@@ -12,22 +12,21 @@ public:
     }
 };
 
-void insert_at_head(Node *&head, int val)
+void insert_at_any_pos(Node *&head,int idx, int val)
 {
     Node *newNode = new Node(val);
-    newNode->next = head;
-    head = newNode;
+    
 }
 
 // print:
 void print_linked_list(Node *head)
 {
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << endl;
-        tmp = tmp->next;
-    }
+    // Node *tmp = head;
+    // while (tmp != NULL)
+    // {
+    //     cout << tmp->val << endl;
+    //     tmp = tmp->next;
+    // }
 }
 
 int main()
@@ -39,9 +38,8 @@ int main()
     head->next = a;
     a->next = b;
 
-    insert_at_head(head, 100);
-    insert_at_head(head, 200);
-    insert_at_head(head, 300);
+    insert_at_any_pos(head,2, 100); // (first node, index, value)
+
     print_linked_list(head);
 
     return 0;
