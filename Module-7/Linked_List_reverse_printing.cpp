@@ -40,6 +40,17 @@ void print_liked_list(Node *head)
     cout << endl;
 };
 
+void print_reverse(Node *tmp)
+{
+    // base case
+    if (tmp == NULL)
+    {
+        return;
+    }
+    print_reverse(tmp->next);
+    cout << tmp->val << endl;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -58,7 +69,9 @@ int main()
             insert_at_tail(head, tail, val);
         }
     }
-    print_liked_list(head);
+    // print_liked_list(head);// not print:
+    // print with recurtion function:
+    print_reverse(head);
 
     return 0;
 }
