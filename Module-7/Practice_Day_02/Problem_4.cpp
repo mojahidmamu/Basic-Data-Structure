@@ -94,22 +94,23 @@ int main()
          if (idx > sz)
          {
             cout << "Invalid" << endl;
+            continue;
          }
          else if (idx == sz)
          {
             insert_at_tail(head, tail, val);
+            print_liked_list(head);
          }
          else if (idx == 0)
          {
             insert_at_head(head, val);
+            print_liked_list(head);
          }
          else{
             insert_at_any_pos(head, idx, val);
+            print_liked_list(head);
          }
-         
-         
-         
+         print_liked_list(head);
     }
-    
     return 0;
 }
