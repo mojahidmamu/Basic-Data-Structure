@@ -9,7 +9,7 @@ public:
     {
         this->val = val;
         this->next = NULL;
-    }
+    }   
 };
 
 int main()
