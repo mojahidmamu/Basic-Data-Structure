@@ -69,7 +69,7 @@ int main()
             insert_at_tail(head, tail, val);
         }
     }
-    // print_liked_list(head);// not print:
+   
     // print with recurtion function:
     print_reverse(head);
 
