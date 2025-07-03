@@ -11,6 +11,7 @@ public:
         this->next = NULL;
     }
 };
+
 int main()
 {
     
