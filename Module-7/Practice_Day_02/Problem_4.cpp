@@ -26,9 +26,14 @@ void insert_at_any_pos(Node *&head, int idx, int val)
 }
 
 // insert at head:
-void insert_at_head(Node *&head, int val)
+void insert_at_head(Node *&head,Node *&tail, int val)
 {
     Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+    }
     newNode->next = head;
     head = newNode;
 }
@@ -103,7 +108,7 @@ int main()
          }
          else if (idx == 0)
          {
-            insert_at_head(head, val);
+            insert_at_head(head,tail, val);
             print_liked_list(head);
          }
          else{
