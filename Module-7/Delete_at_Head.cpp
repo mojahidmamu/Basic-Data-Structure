@@ -26,6 +26,14 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
         tail->next = newNode;
         tail = newNode;
     }
+};
+
+// This is a function, which delete head node: (first node at Linked_List):-
+void delete_at_head(Node *&head)
+{
+    Node *delete_node = head;
+    head = head->next;
+    delete delete_node;
 }
 
 // print fun:
@@ -57,7 +65,9 @@ int main()
         {
             insert_at_tail(head, tail, val);
         }
-    }
+    };
+    // call this function:
+    delete_at_head(head);
     print_liked_list(head);
 
     return 0;
