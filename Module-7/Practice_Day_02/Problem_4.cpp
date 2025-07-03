@@ -40,7 +40,7 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     if (head == NULL)
     {
         head = newNode;
-        tail =  newNode;
+        tail = newNode;
     }
     tail->next = newNode;
     tail = newNode;
@@ -53,8 +53,22 @@ void print_liked_list(Node *head)
     while (tmp != NULL)
     {
         cout << tmp->val << " ";
+        tmp = tmp->next;
     }
-    tmp = tmp->next;
+    cout << endl;
+}
+
+// size linked list: 
+int size_liked_list(Node *head)
+{
+    int count = 0;
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+    return count;
 }
 
 int main()
@@ -72,7 +86,30 @@ int main()
         }
         insert_at_tail(head, tail, val);
     }
-    // print function:
-    print_liked_list(head);
+
+    int idx;
+    while (cin >> idx >> val)
+    {
+         int sz = size_liked_list(head);
+         if (idx > sz)
+         {
+            cout << "Invalid" << endl;
+         }
+         else if (idx == sz)
+         {
+            insert_at_tail(head, tail, val);
+         }
+         else if (idx == 0)
+         {
+            insert_at_head(head, val);
+         }
+         else{
+            insert_at_any_pos(head, idx, val);
+         }
+         
+         
+         
+    }
+    
     return 0;
 }
