@@ -28,11 +28,38 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     }
 };
 
-// This is a function, which delete head node: (first node at Linked_List):-
-void delete_at_head(Node *&head)
+// This is a function, which delete specific node: (specific position node at Linked_List):-
+void delete_at_any_pos(Node *&head, int position)
 {
-    Node *delete_node = head;
-    head = head->next;
+    if (head = NULL)
+    {
+        return;
+    }
+    if (position == 1)
+    {
+        Node *delete_node = head;
+        head = head->next;
+        delete delete_node;
+        return;
+    }
+
+    Node *tmp = head;
+    for (int i = 1; i < position; i++)
+    {
+        if (tmp == NULL && tmp->next == NULL)
+        {
+            return;
+        }
+
+        tmp = tmp->next;
+    }
+    if (tmp->next == NULL)
+    {
+        return; // Position out of bounds
+    }
+
+    Node *delete_node = tmp->next;
+    tmp->next = tmp->next->next;
     delete delete_node;
 }
 
@@ -67,7 +94,8 @@ int main()
         }
     };
     // call this function:
-    delete_at_head(head);
+    int positon = 2;
+    delete_at_any_pos(head, positon);
     print_liked_list(head);
 
     return 0;
