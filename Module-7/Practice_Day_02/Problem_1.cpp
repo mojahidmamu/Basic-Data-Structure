@@ -28,7 +28,6 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
         tail = newNode;
         sz++;
     }
-
 };
 
 // print fun:
@@ -42,6 +41,18 @@ void print_liked_list(Node *head)
     }
     cout << endl;
 };
+
+// get length:
+int get_length(Node *head)
+{
+    int count = 1;
+    while (head != NULL)
+    {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
 
 int main()
 {
@@ -66,8 +77,12 @@ int main()
     {
         insert_at_tail(head2, tail2, val2);
     }
-    print_liked_list(head);
-    print_liked_list(head2);
+    // print_liked_list(head);
+    // print_liked_list(head2);
+
+    int len1 = get_length(head);
+    int len2 = get_length(head2);
+    cout << len1 << " " << len2;
 
     return 0;
 }
