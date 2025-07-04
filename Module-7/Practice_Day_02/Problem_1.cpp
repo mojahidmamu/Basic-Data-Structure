@@ -13,6 +13,7 @@ public:
 };
 
 // insert at tail:
+int sz = 0;
 void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -25,10 +26,10 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     {
         tail->next = newNode;
         tail = newNode;
+        sz++;
     }
+
 };
-
-
 
 // print fun:
 void print_liked_list(Node *head)
@@ -46,9 +47,7 @@ int main()
 {
     Node *head = NULL;
     Node *tail = NULL;
-    Node *head2 = NULL;
-    Node *tail2 = NULL;
-    
+
     int val;
     while (cin >> val && val != -1)
     {
@@ -57,17 +56,18 @@ int main()
         //     break;
         // }
         insert_at_tail(head, tail, val);
-        
     }
     //////
+    Node *head2 = NULL;
+    Node *tail2 = NULL;
+
     int val2;
     while (cin >> val2 && val2 != -1)
     {
         insert_at_tail(head2, tail2, val2);
-        
     }
-    print_liked_list(head); 
-    print_liked_list(head2); 
+    print_liked_list(head);
+    print_liked_list(head2);
 
     return 0;
 }
