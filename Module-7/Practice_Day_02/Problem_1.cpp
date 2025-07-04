@@ -82,7 +82,14 @@ int main()
 
     int len1 = get_length(head);
     int len2 = get_length(head2);
-    cout << len1 << " " << len2;
+    if (len1 == len2)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 
     return 0;
 }
