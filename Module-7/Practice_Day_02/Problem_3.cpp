@@ -26,6 +26,25 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
         tail->next = newNode;
         tail = newNode;
     }
+};
+
+// Find the Maximum value:
+int max_value(Node *head)
+{
+    int maxVal = head->val;
+    Node *tmp = head->next;
+    while (tmp != NULL)
+    {
+        if (tmp->val > maxVal)
+        {
+            maxVal = tmp->val;
+        }
+        else
+        {
+            tmp = tmp->next;
+        }
+    }
+    return maxVal;
 }
 
 // print fun:
@@ -58,7 +77,8 @@ int main()
             insert_at_tail(head, tail, val);
         }
     }
-    print_liked_list(head);
+
+    cout << max_value(head) << endl;
 
     return 0;
 }
