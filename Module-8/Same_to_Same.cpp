@@ -78,3 +78,4 @@ int main()
     checkBothElementSame(head1, head2);
     return 0;
 };
+// Accepted: 
