@@ -50,12 +50,11 @@ int main()
 {
  Node *tmp = head;
  int count = 0; // কাউন্ট ভেরিয়েবল নিচ্ছি।
- while (tmp != NULL)
- {
- count++; // সবগুলো নোডে যেয়ে কাউন্ট করছি।
- tmp = tmp->next;
- }
+while (tmp != NULL)
+{
+count++; // সবগুলো নোডে যেয়ে কাউন্ট করছি।
+tmp = tmp->next;
+}
  return count; // কাউন্ট করা শেষে কাউন্ট রিটার্ন করছি।
 }
-
  */
