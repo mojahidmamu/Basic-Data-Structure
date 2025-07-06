@@ -40,6 +40,33 @@ void print_liked_list(Node *head)
     cout << endl;
 };
 
+// Remove Duplicate:
+void removeDuplicates(Node *head)
+{
+    Node *tmp = head;
+
+    while (tmp != NULL)
+    {
+        Node *prev = tmp;
+        Node *runner = tmp->next;
+
+        while (runner != NULL)
+        {
+            if (runner->val == tmp->val)
+            {
+                prev->next = runner->next;
+                runner = prev->next;
+            }
+            else
+            {
+                prev = runner;
+                runner = runner->next;
+            }
+        }
+        tmp = tmp->next;
+    }
+}
+
 int main()
 {
     Node *head = NULL;
@@ -58,6 +85,11 @@ int main()
             insert_at_tail(head, tail, val);
         }
     }
+
+    // Duplicate Function:
+    removeDuplicates(head);
+
+    // Print fun:
     print_liked_list(head);
 
     return 0;
