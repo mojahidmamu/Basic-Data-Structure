@@ -50,11 +50,11 @@ int main()
         cin >> x;
         if (x == -1)
         {
-            insert_at_tail(head, x);
+            break;
         }
         else
         {
-            break;
+            insert_at_tail(head, x);
         }
     }
 
