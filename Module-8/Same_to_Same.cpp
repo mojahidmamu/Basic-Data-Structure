@@ -30,28 +30,29 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     }
 };
 
-// print fun:
-void print_liked_list(Node *head)
+void checkBothElementSame(Node *head1, Node *head2)
 {
-    Node *tmp = head;
-    while (tmp != NULL)
+    while (head1 && head2)
     {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
+        if (head1->val != head2->val)
+        {
+            cout << "NO" << endl;
+            return;
+        }
+        else
+        {
+            head1 = head1->next;
+            head2 = head2->next;
+        }
     }
-    cout << endl;
-};
-
-// get length:
-int get_length(Node *head)
-{
-    int count = 1;
-    while (head != NULL)
+    if (!head1 && !head2)
     {
-        count++;
-        head = head->next;
+        cout << "YES" << endl;
     }
-    return count;
+    else
+    {
+        cout << "NO" << endl;
+    }
 }
 
 int main()
@@ -62,13 +63,9 @@ int main()
     int val;
     while (cin >> val && val != -1)
     {
-        // if (val == -1)
-        // {
-        //     break;
-        // }
         insert_at_tail(head1, tail1, val);
     }
-    //////
+    //
     Node *head2 = NULL;
     Node *tail2 = NULL;
 
@@ -77,19 +74,7 @@ int main()
     {
         insert_at_tail(head2, tail2, val2);
     }
-    // print_liked_list(head);
-    // print_liked_list(head2);
 
-    int len1 = get_length(head1);
-    int len2 = get_length(head2);
-    if (len1 == len2)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
-
+    checkBothElementSame(head1, head2);
     return 0;
-}
+};
