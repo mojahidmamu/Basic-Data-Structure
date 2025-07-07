@@ -17,9 +17,10 @@ public:
 // delete at tail;
 void delete_at_tail(Node *&head, Node *&tail)
 {
-    Node *newNode = head;
-    newNode->prev = NULL;
-    delete newNode;
+    Node *deleteNode = tail;
+    tail = tail->prev;
+    tail->next = NULL;
+    delete deleteNode;
 }
 
 // print-forward:

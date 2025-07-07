@@ -15,7 +15,7 @@ public:
 };
 
 // delete at head;
-void delete_at_head(Node *&head)
+void delete_at_head(Node *&head, Node *&tail)
 {
     Node *newNode = head;
     head = head->next;
@@ -50,7 +50,7 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    delete_at_head(head);
+    delete_at_head(head, tail);
 
     cout << "Forward Print: ";
     print_forward(head);
