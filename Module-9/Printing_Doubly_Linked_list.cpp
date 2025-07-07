@@ -22,9 +22,7 @@ int main()
 
     head->next = a;
     a->next = tail;
-    // tail->next = NULL;
-
-    // head->prev = NULL;
+    
     a->prev = head;
     tail->prev = a;
 
