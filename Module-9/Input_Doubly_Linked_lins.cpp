@@ -14,6 +14,22 @@ public:
     }
 };
 
+// insert at tail;
+void insert_at_tail(Node *&head, Node *&tail, int val)
+{
+    Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = newNode;
+}
+
 // print-forward:
 void print_forward(Node *head)
 {
@@ -41,9 +57,9 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    
+    insert_at_tail(head, tail, 100);
 
-    cout << "Print: ";
+    cout << "Forward Print: ";
     print_forward(head);
 
     return 0;
