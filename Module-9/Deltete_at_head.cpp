@@ -14,13 +14,13 @@ public:
     }
 };
 
-// insert at head; 
-void insert_at_head(Node *&head, int val)
+// insert at head;
+void delete_at_head(Node *&head)
 {
-    Node * newNode = new Node(val);
-    newNode->next = head;
-    head->prev = newNode;
-    head = newNode;
+    Node *newNode = head;
+    head = head->next;
+    delete newNode;
+    head->prev = NULL;
 }
 
 // print-forward:
@@ -50,11 +50,10 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    insert_at_head(head, 100);
+    delete_at_head(head);
 
     cout << "Forward Print: ";
     print_forward(head);
-    
 
     return 0;
 }
