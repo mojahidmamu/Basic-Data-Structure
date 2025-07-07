@@ -17,6 +17,13 @@ public:
 // delete at any position:
 void delete_at_any_pos(Node *&head, Node *&tail, int idx)
 {
+    Node *tmp = head;
+    for (int i = 0; i < idx; i++)
+    {
+        tmp = tmp->next;
+    }
+    tmp->next = tmp->next->next;
+    
     Node *deleteNode = tail;
     tail = tail->prev;
     tail->next = NULL;
