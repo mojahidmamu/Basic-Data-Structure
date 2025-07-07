@@ -14,6 +14,30 @@ public:
     }
 };
 
+// print-forward: 
+void print_forward(Node *head)
+{
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+};
+
+// print-forward: 
+void print_forward(Node *head)
+{
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+};
+
 int main()
 {
     Node *head = new Node(10);
@@ -22,9 +46,11 @@ int main()
 
     head->next = a;
     a->next = tail;
-    
+
     a->prev = head;
     tail->prev = a;
+
+    print_forward(head);
 
     return 0;
 }
