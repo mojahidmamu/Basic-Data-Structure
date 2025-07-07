@@ -14,6 +14,15 @@ public:
     }
 };
 
+// insert at head; 
+void insert_at_head(Node *&head, int val)
+{
+    Node * newNode = new Node(val);
+    newNode->next = head;
+    head->prev = newNode;
+    head = newNode;
+}
+
 // print-forward:
 void print_forward(Node *head)
 {
@@ -26,34 +35,26 @@ void print_forward(Node *head)
     cout << endl;
 };
 
-// print-backward:
-void print_backward(Node *tail)
-{
-    Node *tmp = tail;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->prev;
-    }
-    cout << endl;
-};
-
 int main()
 {
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *tail = new Node(30);
+    Node *b = new Node(30);
+    Node *tail = new Node(40);
 
     head->next = a;
-    a->next = tail;
+    a->next = b;
+    b->next = tail;
 
     a->prev = head;
-    tail->prev = a;
+    b->prev = a;
+    tail->prev = b;
+
+    insert_at_head(head, 100);
 
     cout << "Forward Print: ";
     print_forward(head);
-    cout << "Backward Print: ";
-    print_backward(tail);
+    
 
     return 0;
 }
