@@ -14,8 +14,8 @@ public:
     }
 };
 
-// delete at tail;
-void delete_at_tail(Node *&head, Node *&tail)
+// delete at any position:
+void delete_at_any_pos(Node *&head, Node *&tail, int idx)
 {
     Node *deleteNode = tail;
     tail = tail->prev;
@@ -50,7 +50,8 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    delete_at_tail(head, tail);
+    int idx = 2;// other-wise, input from user: 
+    delete_at_any_pos(head, tail, idx);
 
     cout << "Print: ";
     print_forward(head);
