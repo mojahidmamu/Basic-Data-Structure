@@ -56,7 +56,7 @@ int main()
         }
         else
         {
-            insert_at_tail(head, tail, 100);
+            insert_at_tail(head, tail, val);
         }
     }
 
