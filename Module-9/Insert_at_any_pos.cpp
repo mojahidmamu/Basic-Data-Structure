@@ -14,8 +14,8 @@ public:
     }
 };
 
-// insert at tail; 
-void insert_at_tail(Node *&tail, int val)
+// insert at any position: 
+void insert_at_any_pos(Node *&head,Node *&tail, int val)
 {
     Node * newNode = new Node(val);
     tail->next = newNode;
@@ -50,8 +50,8 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    insert_at_tail(tail, 100);
-
+    insert_at_any_pos(head, tail, 2250);
+    
     cout << "Forward Print: ";
     print_forward(head);
     
