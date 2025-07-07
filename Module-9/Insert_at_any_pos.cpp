@@ -14,13 +14,19 @@ public:
     }
 };
 
-// insert at any position: 
-void insert_at_any_pos(Node *&head,Node *&tail, int val)
+// insert at any position:
+void insert_at_any_pos(Node *&head, int idx, int val)
 {
-    Node * newNode = new Node(val);
-    tail->next = newNode;
-    newNode->prev = tail;
-    tail = newNode;
+    Node *newNode = new Node(val);
+    Node *tmp = head;
+    for (int i = 1; i < idx; i++)
+    {
+        tmp = tmp->next;
+    }
+    newNode->next = tmp->next;
+    tmp->next->prev = newNode;
+    tmp->next = newNode;
+    newNode->prev = tmp;
 }
 
 // print-forward:
@@ -50,11 +56,10 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    insert_at_any_pos(head, tail, 2250);
-    
+    insert_at_any_pos(head, 2, 250);
+
     cout << "Forward Print: ";
     print_forward(head);
-    
 
     return 0;
 }
