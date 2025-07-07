@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node
 {
 public:
@@ -14,7 +15,7 @@ public:
     }
 };
 
-// insert at tail;
+// insert at tail
 void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -29,7 +30,7 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     tail = newNode;
 }
 
-// print-forward:
+// print forward
 void print_forward(Node *head)
 {
     Node *tmp = head;
@@ -39,7 +40,7 @@ void print_forward(Node *head)
         tmp = tmp->next;
     }
     cout << endl;
-};
+}
 
 int main()
 {
@@ -56,7 +57,7 @@ int main()
         }
         else
         {
-            insert_at_tail(head, tail, 100);
+            insert_at_tail(head, tail, val);  
         }
     }
 
