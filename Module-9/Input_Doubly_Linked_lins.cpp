@@ -14,20 +14,6 @@ public:
     }
 };
 
-// delete at any position:
-void delete_at_any_pos(Node *&head, int idx)
-{
-    Node *tmp = head;
-    for (int i = 0; i < idx; i++)
-    {
-        tmp = tmp->next;
-    }
-    Node *deleteNode = tmp->next;
-    tmp->next = tmp->next->next;
-    tmp->next->prev = tmp;
-    delete deleteNode;
-}
-
 // print-forward:
 void print_forward(Node *head)
 {
@@ -55,8 +41,7 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    // other-wise, input from user:
-    delete_at_any_pos(head, 2);
+    
 
     cout << "Print: ";
     print_forward(head);
