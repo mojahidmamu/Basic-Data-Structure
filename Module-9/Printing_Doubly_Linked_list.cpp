@@ -14,7 +14,7 @@ public:
     }
 };
 
-// print-forward: 
+// print-forward:
 void print_forward(Node *head)
 {
     Node *tmp = head;
@@ -26,14 +26,14 @@ void print_forward(Node *head)
     cout << endl;
 };
 
-// print-forward: 
-void print_forward(Node *head)
+// print-backward:
+void print_backward(Node *tail)
 {
-    Node *tmp = head;
+    Node *tmp = tail;
     while (tmp != NULL)
     {
         cout << tmp->val << " ";
-        tmp = tmp->next;
+        tmp = tmp->prev;
     }
     cout << endl;
 };
@@ -50,7 +50,10 @@ int main()
     a->prev = head;
     tail->prev = a;
 
+    cout << "Forward Print: ";
     print_forward(head);
+    cout << "Backward Print: ";
+    print_backward(tail);
 
     return 0;
 }
