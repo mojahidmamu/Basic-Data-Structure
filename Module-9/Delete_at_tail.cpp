@@ -14,12 +14,11 @@ public:
     }
 };
 
-// delete at head;
-void delete_at_head(Node *&head)
+// delete at tail;
+void delete_at_tail(Node *&head, Node *&tail)
 {
     Node *newNode = head;
-    head = head->next;
-    head->prev = NULL;
+    newNode->prev = NULL;
     delete newNode;
 }
 
@@ -50,9 +49,9 @@ int main()
     b->prev = a;
     tail->prev = b;
 
-    delete_at_head(head);
+    delete_at_tail(head, tail);
 
-    cout << "Forward Print: ";
+    cout << "Print: ";
     print_forward(head);
 
     return 0;
