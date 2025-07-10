@@ -29,7 +29,7 @@ int main()
     // Print :
     for (int element : copy_list)
     {
-        cout << element << " ";
+        cout << element << " "; // print the all element...
     }
 
     return 0;
