@@ -16,9 +16,9 @@ int main()
 
 
     // Type-3: List with size & value: 
-    list<int> l(100);
-    list<char> l(50);
-    list<float> l(30);
-    list<long long int> l(40);
+    list<int> l(100,10);
+    list<char> l(50, 'a');
+    list<float> l(30, 2.5);
+    list<long long int> l(10, 10000);
     return 0;
 }
