@@ -20,5 +20,10 @@ int main()
     list<char> l(50, 'a');
     list<float> l(30, 2.5);
     list<long long int> l(10, 10000);
+
+    // Type-4: List with all value, initially:-
+    list<int> list1 = {1,2,3,4};
+    list<int> list2(list1);
+
     return 0;
 }
