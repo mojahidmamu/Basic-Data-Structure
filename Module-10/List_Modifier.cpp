@@ -2,8 +2,11 @@
 using namespace std;
 int main()
 {
-    // myList.pop_back() =>  Delete the tail.
-    
+    list<int> l(10);
 
+    for (int element : l)
+    {
+        cout << element << " "; 
+    }
     return 0;
 }
