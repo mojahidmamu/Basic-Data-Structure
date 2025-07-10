@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    list<int> l(10);
+    list<int> l(10, 6);
 
     for (int element : l)
     {
