@@ -2,6 +2,11 @@
 using namespace std;
 int main()
 {
-    
+    list<int> l(10, 5);
+   
+    for (int element : l)
+    {
+        cout << element << " ";
+    }
     return 0;
 }

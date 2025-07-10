@@ -12,6 +12,6 @@ int main()
     // l.remove() // delete the last element form the list: 
     // l.sort() ; // sorted the list in ascending order
     // l.unique() // remove the duplicate element, but must sorted: 
-    l.reverse() // reverse the list: 
+    // l.reverse() // reverse the list: 
     return 0;
 }
