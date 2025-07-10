@@ -14,16 +14,23 @@ int main()
     list<float> l(30);
     list<long long int> l(40);
 
-
-    // Type-3: List with size & value: 
-    list<int> l(100,10);
+    // Type-3: List with size & value:
+    list<int> l(100, 10);
     list<char> l(50, 'a');
     list<float> l(30, 2.5);
     list<long long int> l(10, 10000);
 
     // Type-4: List with all value, initially:-
-    list<int> list1 = {1,2,3,4};
+    list<int> list1 = {1, 2, 3, 4};
     list<int> list2(list1);
+    int array[5] = {1, 2, 3, 4, 5};
+    list<int> copy_list(array, array + 5);
+
+    // Print :
+    for (int element : copy_list)
+    {
+        cout << element << " ";
+    }
 
     return 0;
 }
