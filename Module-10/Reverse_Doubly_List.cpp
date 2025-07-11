@@ -51,9 +51,11 @@ int main()
     head->next = a;
     a->next = b;
     b->next = c;
+    c->next = tail;
     a->prev = head;
     b->prev = a;
     c->prev = b;
+    tail->prev = c;
 
     reverse_print(head, tail);
     print_normal(head);
