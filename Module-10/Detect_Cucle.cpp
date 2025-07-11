@@ -18,11 +18,11 @@ int main()
     Node *a = new Node(20);
     Node *b = new Node(30);
 
-    // Connections: 
+    // Connections:
     head->next = a;
     a->next = b;
 
-    // take two pointer: 
+    // take two pointer:
     Node *slow = head;
     Node *fast = head;
     bool flag = false; // take a flag variable:
@@ -33,9 +33,17 @@ int main()
         fast = fast->next->next;
         if (fast == slow)
         {
-            flag = 
+            flag = true;
+            break;
         }
-        
+    }
+
+    if (flag == true)
+    {
+        cout << "Cycle Detected" << endl;
+    }
+    else{
+         cout << "NOT Cycle Detected" << endl;
     }
     
 
