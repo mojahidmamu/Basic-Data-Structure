@@ -10,16 +10,14 @@ int main()
         cin >> arr[i];
     }
 
-    
-   long long int prefix[N];
+    long long int prefix[N];
     prefix[0] = arr[0];
     for (int i = 1; i < N; i++)
     {
-        prefix[i] = prefix[i-1] + arr[i];
+        prefix[i] = prefix[i - 1] + arr[i];
     }
-    
-    reverse(prefix, prefix + N); // reverse
 
+    reverse(prefix, prefix + N); // reverse
 
     for (int i = 0; i < N; i++)
     {
@@ -28,4 +26,4 @@ int main()
 
     return 0;
 }
-// Accepted: 
+// Accepted:
