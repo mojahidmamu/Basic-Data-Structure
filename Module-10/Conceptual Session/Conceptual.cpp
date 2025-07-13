@@ -28,13 +28,24 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     tail = newNode;
 }
 
-void print_doubly(Node *head)
+void print_doubly_forward(Node *head)
 {
     Node *tmp = head;
     while (tmp != NULL)
     {
         cout << tmp->val << " ";
         tmp = tmp->next;
+    }
+    cout << endl;
+}
+
+void print_doubly_backward(Node *tail)
+{
+    Node *tmp =tail;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
     }
     cout << endl;
 }
@@ -53,6 +64,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    print_doubly(head);
+    print_doubly_forward(head);
+    print_doubly_backward(tail);
     return 0;
 }
