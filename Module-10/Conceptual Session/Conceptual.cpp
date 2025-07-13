@@ -14,7 +14,7 @@ public:
     }
 };
 
-void insert_at_tail(Node *head, Node *tail, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (head == NULL)
@@ -36,6 +36,7 @@ void print_doubly(Node *head)
         cout << tmp->val << " ";
         tmp = tmp->next;
     }
+    cout << endl;
 }
 
 int main()
