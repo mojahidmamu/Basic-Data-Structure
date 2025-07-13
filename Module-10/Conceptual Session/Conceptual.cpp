@@ -30,7 +30,12 @@ void insert_at_tail(Node *head, Node *tail, int val)
 
 void print_doubly(Node *head)
 {
-    
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
 }
 
 int main()
