@@ -4,14 +4,14 @@ int main()
 {
     list<int> l;
     int n;
-    cin >> n;
-    while (n == -1)
+
+    while (cin >> n && n != -1)
     {
         l.push_back(n);
     }
     l.sort();
     l.unique();
-    for (auto val : l)
+    for (int val : l)
     {
         cout << val << " ";
     }
