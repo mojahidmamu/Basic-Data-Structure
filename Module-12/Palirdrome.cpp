@@ -56,6 +56,18 @@ void print_backward(Node *tail)
     cout << endl;
 }
 
+bool isPalirdrome(Node *head, Node *tail)
+{
+    while (head != NULL && tail != NULL && head != tail)
+    {
+        if (head->val != tail->val)
+            return false;
+        head = head->next;
+        tail = tail->prev;
+    }
+    return true;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -65,18 +77,19 @@ int main()
     {
         insert_at_tail(head, tail, val);
     }
-    print_forward(head);
-    print_backward(tail);
 
-    // bool flag = false;
-    // if (flag == true)
-    // {
-    //     cout << "YES" << endl;
-    // }
-    // else
-    // {
-    //     cout << "NO" << endl;
-    // }
+    // print_forward(head);
+    // print_backward(tail);
+
+    bool flag = isPalirdrome(head, tail);
+    if (flag == true)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 
     return 0;
 }
