@@ -42,7 +42,7 @@ void print_fun(Node *head)
 
 // Remove Duplicate:
 void remove_duplicate(Node *head)
-{
+{   
     Node *tmp = head;
     while (tmp->next != NULL)
     {
@@ -61,6 +61,7 @@ void remove_duplicate(Node *head)
             tmp = tmp->next;
         }
     }
+    
 }
 
 int main()
