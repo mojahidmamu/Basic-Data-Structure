@@ -32,29 +32,29 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     }
 }
 
-// Print forward:
-void print_forward(Node *head)
-{
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
-    }
-    cout << endl;
-}
+// // Print forward:
+// void print_forward(Node *head)
+// {
+//     Node *tmp = head;
+//     while (tmp != NULL)
+//     {
+//         cout << tmp->val << " ";
+//         tmp = tmp->next;
+//     }
+//     cout << endl;
+// }
 
-// Print backward:
-void print_backward(Node *tail)
-{
-    Node *tmp = tail;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->prev;
-    }
-    cout << endl;
-}
+// // Print backward:
+// void print_backward(Node *tail)
+// {
+//     Node *tmp = tail;
+//     while (tmp != NULL)
+//     {
+//         cout << tmp->val << " ";
+//         tmp = tmp->prev;
+//     }
+//     cout << endl;
+// }
 
 bool isPalirdrome(Node *head, Node *tail)
 {
@@ -78,8 +78,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    // print_forward(head);
-    // print_backward(tail);
+    
 
     bool flag = isPalirdrome(head, tail);
     if (flag == true)
@@ -93,3 +92,4 @@ int main()
 
     return 0;
 }
+// Accepted:
