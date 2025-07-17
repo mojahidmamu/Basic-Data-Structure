@@ -31,3 +31,12 @@ int main()
 // };
 //     return 0;
 // }
+
+
+// int sz = size(head);
+// Node *tmp = head;
+// for (int i = 1; i <= sz/2; i++)
+// {
+//     tmp = tmp.next;
+// }
+// return tmp;
