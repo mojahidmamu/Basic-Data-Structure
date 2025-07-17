@@ -40,6 +40,29 @@ void print_fun(Node *head)
     }
 }
 
+// Remove Duplicate:
+void remove_duplicate(Node *head)
+{
+    Node *tmp = head;
+    while (tmp->next != NULL)
+    {
+        if (tmp->val == tmp->next->val)
+        {
+            Node *deleteNode = tmp->next;
+            tmp->next = tmp->next->next;
+            delete deleteNode;
+        }
+        else if (tmp->next == NULL)
+        {
+            break;
+        }
+        else if (tmp->val != tmp->next->val)
+        {
+            tmp = tmp->next;
+        }
+    }
+}
+
 int main()
 {
     Node *head = NULL;
@@ -50,6 +73,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
+    remove_duplicate(head);
     print_fun(head);
 
     return 0;
