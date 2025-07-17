@@ -18,7 +18,7 @@ int main()
     return 0;
 }
 /**
- * Condition: 
+ * Condition:Check for duplicate >>>>  
  * 1. head == NULL; => return head...
  * 2. tmp.next == NULL; => 
  * 3. if > tmp.val == tmp.next.val > {

@@ -1,22 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-class Node
-{
-public:
-    int val;
-    Node *next;
-    Node(int val)
-    {
-        this->val = val;
-        this->next = NULL;
-    }
-};
+// I want to write some step-step to solve : Reverse Linked List in (LeetCode):
+/*
 
-int main()
-{
-    
-    return 0;
-}
-
-
-
+*/
