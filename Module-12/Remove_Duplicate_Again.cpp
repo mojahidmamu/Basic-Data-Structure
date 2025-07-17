@@ -42,7 +42,7 @@ void print_fun(Node *head)
 
 // Remove Duplicate:
 void remove_duplicate(Node *head)
-{   
+{
     Node *tmp = head;
     while (tmp->next != NULL)
     {
@@ -61,8 +61,28 @@ void remove_duplicate(Node *head)
             tmp = tmp->next;
         }
     }
-    
 }
+
+// sort_function:
+void sort_dec(Node *head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->val > j->val)
+            {
+                int tmp = i->val;
+                i->val = j->val;
+                j->val = tmp;
+            }
+        }
+    }
+};
 
 int main()
 {
@@ -74,6 +94,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
+    sort_dec(head);
     remove_duplicate(head);
     print_fun(head);
 
