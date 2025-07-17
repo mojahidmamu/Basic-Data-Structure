@@ -32,10 +32,10 @@ int main()
 
 
 
- 
+
 /**
  * Condition: Check for Delete a node in a specific position:
- *
+ * 
     void deleteNode(ListNode *node)
     {
         node->val = node->next->val;   // নোডের মধ্যে তার নেক্সট নোডের ভেলু রেখে দিতে পারি।
