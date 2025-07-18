@@ -26,22 +26,49 @@ int main()
     // input query:
     int query;
     cin >> query;
+    int current = playList.begin();
     while (query--)
     {
         string command;
         cin >> command;
-        if (command == 'visit')
+        if (command == "visit")
         {
             string songName;
             cin >> songName;
-        }
-        else if (command == 'prev')
-        {
-            /* code */
+            auto isFound = find(playList.begin(), playList.end(), songName);
+            if (isFound != playList.end())
+            {
+                cout << *isFound << endl;
+                current = isFound;
+            }
+            else
+            {
+                cout << "Not Available" << endl;
+            }
         }
         else if (command == 'next')
         {
-            /* code */
+            if (next(current) != playList.end())
+            {
+                current = next(current);
+                cout << current << endl;
+            }
+            else
+            {
+                cout << "Not Available" << endl;
+            }
+        }
+        else if (command == 'prev')
+        {
+            if (prev(current) != playList.begin())
+            {
+                current = prev(current);
+                cout << current << endl;
+            }
+            else
+            {
+                cout << "Not Available" << endl;
+            }
         }
     }
 
