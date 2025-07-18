@@ -20,10 +20,18 @@ int main()
         {
             myList.push_back(V);
         }
-        // else if (X == 2)
-        // {
-
-        // }
+        else if (X == 2)
+        {
+            int idx = 0;
+            for (auto it = myList.begin(); it != myList.end(); it++, idx++)
+            {
+                if (idx == V)
+                {
+                    myList.erase(it);
+                    break;
+                }
+            }
+        }
 
         // print forward:
         cout << "L -> ";
