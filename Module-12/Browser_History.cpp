@@ -60,9 +60,10 @@ int main()
         }
         else if (command == 'prev')
         {
-            if (prev(current) != playList.begin())
+            auto it = prev(current);
+            if (it != playList.begin())
             {
-                current = prev(current);
+                current = it;
                 cout << current << endl;
             }
             else
