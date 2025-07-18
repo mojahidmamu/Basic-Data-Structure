@@ -29,6 +29,7 @@ int main()
     while (query--)
     {
         string command;
+        cin >> command;
         if (command == 'visit')
         {
             string songName;
