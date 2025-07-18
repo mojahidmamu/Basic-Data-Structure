@@ -16,7 +16,33 @@ public:
 
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    list<string> playList;
+    string song;
+    while (cin >> string && song == 'end')
+    {
+        playList.push_back(song);
+    }
+
+    // input query:
+    int query;
+    cin >> query;
+    while (query--)
+    {
+        string command;
+        if (command == 'visit')
+        {
+            string songName;
+            cin >> songName;
+        }
+        else if (command == 'prev')
+        {
+            /* code */
+        }
+        else if (command == 'next')
+        {
+            /* code */
+        }
+    }
+
     return 0;
 }
