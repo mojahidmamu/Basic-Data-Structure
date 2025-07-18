@@ -4,19 +4,29 @@ int main()
 {
     list<string> playList;
     string song;
-    while (cin >> string && song == 'end')
+
+    while (cin >> song && song != "end")
     {
         playList.push_back(song);
     }
 
+    if (playList.empty())
+    {
+        cout << "Playlist is empty." << endl;
+        return 0;
+    }
+
+    auto current = playList.begin();
+
     // input query:
     int query;
     cin >> query;
-    int current = playList.begin();
+
     while (query--)
     {
         string command;
         cin >> command;
+
         if (command == "visit")
         {
             string songName;
@@ -24,33 +34,33 @@ int main()
             auto isFound = find(playList.begin(), playList.end(), songName);
             if (isFound != playList.end())
             {
-                cout << *isFound << endl;
                 current = isFound;
+                cout << *current << endl;
             }
             else
             {
                 cout << "Not Available" << endl;
             }
         }
-        else if (command == 'next')
+        else if (command == "next")
         {
             if (next(current) != playList.end())
             {
                 current = next(current);
-                cout << current << endl;
+                cout << *current << endl;
             }
             else
             {
                 cout << "Not Available" << endl;
             }
         }
-        else if (command == 'prev')
+        else if (command == "prev")
         {
-            auto it = prev(current);
-            if (it != playList.begin())
+
+            if (current != playList.begin())
             {
-                current = it;
-                cout << current << endl;
+                current = prev(current);
+                cout << *current << endl;
             }
             else
             {
