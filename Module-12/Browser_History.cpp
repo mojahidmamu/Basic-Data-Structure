@@ -2,21 +2,21 @@
 using namespace std;
 int main()
 {
-    list<string> playList;
-    string song;
+    list<string> web_list;
+    string web_address;
 
-    while (cin >> song && song != "end")
+    while (cin >> web_address && web_address != "end")
     {
-        playList.push_back(song);
+        web_list.push_back(web_address);
     }
 
-    if (playList.empty())
+    if (web_list.empty())
     {
         cout << "Playlist is empty." << endl;
         return 0;
     }
 
-    auto current = playList.begin();
+    auto current = web_list.begin();
 
     // input query:
     int query;
@@ -29,10 +29,10 @@ int main()
 
         if (command == "visit")
         {
-            string songName;
-            cin >> songName;
-            auto isFound = find(playList.begin(), playList.end(), songName);
-            if (isFound != playList.end())
+            string web_Name;
+            cin >> web_Name;
+            auto isFound = find(web_list.begin(), web_list.end(), web_Name);
+            if (isFound != web_list.end())
             {
                 current = isFound;
                 cout << *current << endl;
@@ -44,7 +44,7 @@ int main()
         }
         else if (command == "next")
         {
-            if (next(current) != playList.end())
+            if (next(current) != web_list.end())
             {
                 current = next(current);
                 cout << *current << endl;
@@ -57,7 +57,7 @@ int main()
         else if (command == "prev")
         {
 
-            if (current != playList.begin())
+            if (current != web_list.begin())
             {
                 current = prev(current);
                 cout << *current << endl;
