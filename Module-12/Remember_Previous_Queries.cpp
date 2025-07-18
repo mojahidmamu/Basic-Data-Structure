@@ -1,37 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Print forward:
-void print_forward(Node *head)
-{
-    cout << "L -> ";
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
-    }
-    cout << endl;
-}
-
-// Print backward:
-void print_backward(Node *tail)
-{
-    cout << "R -> ";
-    Node *tmp = tail;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->prev;
-    }
-    cout << endl;
-}
-
 #include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    list<string> myList;
+    list<int> myList;
     int Q;
     cin >> Q;
     while (Q--)
@@ -42,17 +16,30 @@ int main()
         {
             myList.push_front(V);
         }
-        else if ()
+        else if (X == 1)
         {
             myList.push_back(V);
         }
-        else if (X == 2)
-        {
-            
-        }
+        // else if (X == 2)
+        // {
 
-        print_forward(head);
-        print_backward(tail);
+        // }
+
+        // print forward:
+        cout << "L -> ";
+        for (int val : myList)
+        {
+            cout << val << " ";
+        }
+        cout << endl;
+
+        // print backward:
+        cout << "R -> ";
+        for (auto it = myList.rbegin(); it != myList.rend(); ++it)
+        {
+            cout << *it << " ";
+        }
+        cout << endl;
     }
 
     return 0;
