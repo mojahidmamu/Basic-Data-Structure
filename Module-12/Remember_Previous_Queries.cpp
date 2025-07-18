@@ -27,25 +27,28 @@ void print_backward(Node *tail)
     cout << endl;
 }
 
+#include <bits/stdc++.h>
+using namespace std;
 int main()
 {
-    list<int> myList; 
+    list<string> myList;
     int Q;
     cin >> Q;
     while (Q--)
     {
         int X, V;
         cin >> X >> V;
-
         if (X == 0)
         {
-
+            myList.push_front(V);
         }
-        else if (X == 1)
+        else if ()
         {
+            myList.push_back(V);
         }
         else if (X == 2)
         {
+            
         }
 
         print_forward(head);
