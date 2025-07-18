@@ -65,7 +65,7 @@ void insert_at_tail(Node *&head, Node *&tail, int pos, int val, int &size)
             head = newNode;
         }
     }
-    //
+    // insert at tail or last: 
     else if (pos == size)
     {
         tail->next = newNode;
@@ -108,3 +108,4 @@ int main()
 
     return 0;
 }
+// Accepted: 
