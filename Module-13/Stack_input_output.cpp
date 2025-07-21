@@ -15,6 +15,7 @@ public:
 };
 int main()
 {
-
+    Node *head = NULL;
+    Node *tail = NULL;
     return 0;
 }
