@@ -19,10 +19,12 @@ class myStack
 public:
     Node *head = NULL;
     Node *tail = NULL;
+    int sz = 0;
 
     // There are only 5 operation is useable:
     void push(int val)
     {
+        sz++;
         Node *newNode = new Node(val);
         if (head == NULL)
         {
@@ -37,22 +39,35 @@ public:
     }
     void pop()
     {
+        sz--;
         Node *deleteNode = tail;
         tail = tail->prev;
         delete deleteNode;
+        if (tail == NULL)
+        {
+            head = NULL;
+            return;
+        }
         tail->next = NULL;
     }
     int top()
     {
-        return l.back(); // access the last element
+        return tail->val;
     }
     int size()
     {
-        return l.size();
+        return sz;
     }
     bool empty()
     {
-        return l.empty();
+        if (head == NULL)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 };
 
