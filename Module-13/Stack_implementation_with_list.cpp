@@ -3,28 +3,28 @@ using namespace std;
 class myStack
 {
 public:
-    vector<int> v;
+    list<int> l;
 
     // There are only 5 operation is useable:
     void push(int val)
     {
-        v.push_back(val);
+        l.push_back(val);
     }
     void pop()
     {
-        v.pop_back();
+        l.pop_back();
     }
     int top()
     {
-        return v.back(); // access the last element
+        return l.back(); // access the last element
     }
     int size()
     {
-        return v.size();
+        return l.size();
     }
     bool empty()
     {
-        return v.empty();
+        return l.empty();
     }
 };
 
