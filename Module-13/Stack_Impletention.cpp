@@ -4,6 +4,8 @@ class myStack
 {
 public:
     vector<int> v;
+
+    // There are only 5 operation is useable:
     void push(int val)
     {
         v.push_back(val);
@@ -14,15 +16,15 @@ public:
     }
     int top()
     {
-        v.back(); // access the last element
+        return v.back(); // access the last element
     }
     int size()
     {
-        v.size(); 
+        return v.size();
     }
-    int empty()
+    bool empty()
     {
-        v.empty(); 
+        return v.empty();
     }
 };
 
