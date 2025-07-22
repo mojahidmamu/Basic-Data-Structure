@@ -40,10 +40,13 @@ int main()
         cin >> x;
         st.push(x);
     }
-    cout << st.size() << endl;
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.size() << endl;
+
+    // There are 1 way to print: with while loop->
+    while (st.empty() == false)
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }
 
     return 0;
 }
