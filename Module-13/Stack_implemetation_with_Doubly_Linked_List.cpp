@@ -37,7 +37,10 @@ public:
     }
     void pop()
     {
-        l.pop_back();
+        Node *deleteNode = tail;
+        tail = tail->prev;
+        delete deleteNode;
+        tail->next = NULL;
     }
     int top()
     {
