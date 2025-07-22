@@ -1,21 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Node
+class myStack
 {
 public:
-    int val;
-    Node *next;
-    Node *prev;
-    Node(int val)
-    {
-        this->val = val;
-        this->next = NULL;
-        this->prev = NULL;
-    }
+    vector<int> v;
+    
 };
 
 int main()
 {
-    
+
     return 0;
 }
