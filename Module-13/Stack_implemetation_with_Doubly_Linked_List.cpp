@@ -17,7 +17,8 @@ public:
 class myStack
 {
 public:
-    list<int> l;
+    Node *head = NULL;
+    Node *tail = NULL;
 
     // There are only 5 operation is useable:
     void push(int val)
@@ -44,8 +45,22 @@ public:
 
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    myStack st;
 
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        st.push(x);
+    }
+
+    // There are 1 way to print: with while loop->
+    while (st.empty() == false)
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }
     return 0;
 }
