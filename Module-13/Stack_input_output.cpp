@@ -31,26 +31,19 @@ public:
 int main()
 {
     myStack st;
-    st.push(10);
-    st.push(20);
-    st.push(30);
 
-    cout << st.top() << endl;
-    cout << st.size() << endl;
-    st.pop();
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.size() << endl;
-    cout << st.top() << endl;
-    st.pop();
-    if (st.empty() == true)
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
     {
-        cout << "empty" << endl;
+        int x;
+        cin >> x;
+        st.push(x);
     }
-    else
-    {
-        cout << "NOT empty" << endl;
-    }
+    cout << st.size() << endl;
+    cout << st.top() << endl;
+    st.pop();
+    cout << st.size() << endl;
 
     return 0;
 }
