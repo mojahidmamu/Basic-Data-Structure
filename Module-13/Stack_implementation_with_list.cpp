@@ -40,6 +40,7 @@ int main()
         cin >> x;
         st.push(x);
     }
+    
 
     // There are 1 way to print: with while loop->
     while (st.empty() == false)

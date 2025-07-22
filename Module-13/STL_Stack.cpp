@@ -9,9 +9,9 @@ int main()
     cin >> n;
     for (int i = 0; i < n; i++)
     {
-        int x;
-        cin >> x;
-        st.push(x);
+        int val;
+        cin >> val;
+        st.push(val);
     }
     // print : 
     while (st.empty() == false)
