@@ -16,6 +16,14 @@ public:
     {
         v.back(); // access the last element
     }
+    int size()
+    {
+        v.size(); 
+    }
+    int empty()
+    {
+        v.empty(); 
+    }
 };
 
 int main()
