@@ -23,7 +23,17 @@ public:
     // There are only 5 operation is useable:
     void push(int val)
     {
-        l.push_back(val);
+        Node *newNode = new Node(val);
+        if (head == NULL)
+        {
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
     }
     void pop()
     {
