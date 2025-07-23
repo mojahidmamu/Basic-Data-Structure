@@ -12,13 +12,13 @@ public:
     }
 };
 
-class myQueeu
+class myQueue
 {
 public:
     Node *head = NULL;
     Node *tail = NULL;
 
-    void push(int val)
+    void push(int val) // O(1)
     {
         Node *newNode = new Node(val);
         if (head == NULL)
@@ -27,19 +27,31 @@ public:
             tail = newNode;
             return;
         }
-
         tail->next = newNode;
         tail = newNode;
     }
-    
-    void pop()
+
+    void pop() // O(1)
     {
-        v.pop_back();
+        Node *deleteNode = head;
+        head = head->next;
+        delete deleteNode;
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
     }
-    int top()
+
+    int front()
     {
-        return v.back(); // access the last element
+        return  head->val; // access the first element
     }
+
+    int back()
+    {
+        return  tail->val; // access the last element
+    }
+
     int size()
     {
         return v.size();
