@@ -83,7 +83,14 @@ main()
         cin >> val;
         Q.push(val);
     }
-    cout << Q.front() << " " << Q.back() << " " << Q.size();
+    // print: 
+    while (!Q.empty())
+    {
+        cout << Q.front() << " ";
+        Q.pop();
+    }
+    
+    // cout << Q.front() << " " << Q.back() << " " << Q.size();
     
     return 0;
 }
