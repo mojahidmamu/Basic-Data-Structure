@@ -17,9 +17,11 @@ class myQueue
 public:
     Node *head = NULL;
     Node *tail = NULL;
+    int sz = 0;
 
     void push(int val) // O(1)
     {
+        sz++;
         Node *newNode = new Node(val);
         if (head == NULL)
         {
@@ -33,6 +35,7 @@ public:
 
     void pop() // O(1)
     {
+        sz--;
         Node *deleteNode = head;
         head = head->next;
         delete deleteNode;
@@ -42,23 +45,30 @@ public:
         }
     }
 
-    int front()
+    int front() // O(1)
     {
-        return  head->val; // access the first element
+        return head->val; // access the first element
     }
 
-    int back()
+    int back() // O(1)
     {
-        return  tail->val; // access the last element
+        return tail->val; // access the last element
     }
 
-    int size()
+    int size() // O(1)
     {
-        return v.size();
+        return sz;
     }
     bool empty()
     {
-        return v.empty();
+        if (head == NULL)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 
