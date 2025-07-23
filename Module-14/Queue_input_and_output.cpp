@@ -70,11 +70,20 @@ public:
             return false;
         }
     }
-}
+};
 
-int
 main()
 {
-
+    myQueue Q;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int val;
+        cin >> val;
+        Q.push(val);
+    }
+    cout << Q.front() << " " << Q.back() << " " << Q.size();
+    
     return 0;
 }
