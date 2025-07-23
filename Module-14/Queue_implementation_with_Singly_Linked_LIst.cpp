@@ -12,6 +12,13 @@ public:
     }
 };
 
+class myQueeu
+{
+    public: 
+    Node *head = NULL
+    Node *tail = NULL;
+}
+
 int main()
 {
     
