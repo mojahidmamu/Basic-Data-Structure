@@ -18,7 +18,8 @@ int main()
         st1.pop();
     }
      
-
+    reverse(tmp.begin(), tmp.end());
+    
     stack<int> st2;
     for(int i = 0; i < tmp.size(); i++)
     {
