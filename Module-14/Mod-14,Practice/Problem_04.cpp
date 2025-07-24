@@ -11,43 +11,26 @@ int main()
         cin >> val;
         st1.push(val);
     }
+    vector<int> tmp;
+    while (!st1.empty())
+    {
+        tmp.push_back(st1.top());
+        st1.pop();
+    }
+     
 
     stack<int> st2;
-    int M;
-    cin >> M;
-    for (int i = 0; i < M; i++)
+    for(int i = 0; i < tmp.size(); i++)
     {
-        int val;
-        cin >> val;
-        st2.push(val);
+         st2.push(tmp[i]);
     }
 
-    if (N != M)
+    while (!st2.empty())
     {
-        cout << "NO" << endl;
-        return 0;
-    }
-
-    bool areEqual = true;
-    while (!st1.empty() && !st2.empty())
-    {
-        if (st1.top() != st2.top())
-        {
-            areEqual = false;
-            break;
-        }
-        st1.pop();
+        cout << st2.top() << " ";
         st2.pop();
     }
-
-    if (areEqual)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
+    
 
     return 0;
 }
