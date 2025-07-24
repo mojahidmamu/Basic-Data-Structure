@@ -12,14 +12,14 @@ int main()
         st1.push(val);
     }
 
-    stack<int> st2;
+    queue<int> q;
     int M;
     cin >> M;
     for (int i = 0; i < M; i++)
     {
         int val;
         cin >> val;
-        st2.push(val);
+        q.push(val);
     }
 
     if (N != M)
@@ -29,15 +29,15 @@ int main()
     }
 
     bool areEqual = true;
-    while (!st1.empty() && !st2.empty())
+    while (!st1.empty() && !q.empty())
     {
-        if (st1.top() != st2.top())
+        if (st1.top() != q.front())
         {
             areEqual = false;
             break;
         }
         st1.pop();
-        st2.pop();
+        q.pop();
     }
 
     if (areEqual)
