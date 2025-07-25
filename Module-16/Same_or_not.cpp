@@ -2,6 +2,51 @@
 using namespace std;
 int main()
 {
-    
+    int N , M;
+    cin >> N >> M;
+
+    stack<int> st1;
+    for (int i = 0; i < N; i++)
+    {
+        int val;
+        cin >> val;
+        st1.push(val);
+    }
+
+    queue<int> q;
+    for (int i = 0; i < M; i++)
+    {
+        int val;
+        cin >> val;
+        q.push(val);
+    }
+
+    if (N != M)
+    {
+        cout << "NO" << endl;
+        return 0;
+    }
+
+    bool areEqual = true;
+    while (!st1.empty() && !q.empty())
+    {
+        if (st1.top() != q.front())
+        {
+            areEqual = false;
+            break;
+        }
+        st1.pop();
+        q.pop();
+    }
+
+    if (areEqual)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+
     return 0;
 }
