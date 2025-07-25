@@ -8,12 +8,15 @@ int main()
     {
         int commandNumber;
         cin >> commandNumber;
-        while (commandNumber == 0)
+        if (commandNumber == 0)
         {
             int personNmae;
             cin >> personNmae;
         }
-        
+        else
+        {
+            cout << "Invalid" << endl;
+        }
     }
     return 0;
 }
