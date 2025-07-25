@@ -22,7 +22,7 @@ int main()
     
     while (cin >> n && n != -1)
     {
-        /* code */
+        // insert_at_tail(tail);
     }
     
     return 0;
