@@ -51,3 +51,4 @@ int main()
 
     return 0;
 }
+/**in my laptop, suddenly in the monitor,,,,unfortunately one green line,,landscape...Right now, how do i do.? */
