@@ -4,22 +4,26 @@ int main()
 {
     int TestCase;
     cin >> TestCase;
-    stack<int> st;
+
+    queue<string> Q;
+
     while (TestCase--)
     {
         int commandNumber;
         cin >> commandNumber;
-        int personNmae;
+
         if (commandNumber == 0)
         {
-            cin >> personNmae;
+            string personName;
+            cin >> personName;
+            Q.push(personName);
         }
         else if (commandNumber == 1)
         {
-            if (!st.empty())
+            if (!Q.empty())
             {
-                cout << personNmae << endl;
-                st.pop();
+                cout << Q.front() << endl;
+                Q.pop();
             }
             else
             {
@@ -29,3 +33,4 @@ int main()
     }
     return 0;
 }
+// Acccepted: 
