@@ -1,33 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isValid(string s)
+bool isElimination(string s)
 {
     stack<char> st;
-    for (char c : s)
+    for (char ch : s)
     {
-        if (c == '0')
+        if (ch == '1' && !st.empty() && st.top() == '0')
         {
-            if (!st.empty() && st.top() == '1')
-            {
-                st.pop();
-            }
-            else
-            {
-                st.push('0');
-            }
+            st.pop();
         }
-        else if (c == '1')
+        else 
         {
-            if (!st.empty() && st.top() == '0')
-            {
-                st.pop();
-            }
-            else
-            {
-                st.push('1');
-            }
+            st.push(ch);
         }
+        
     }
     return st.empty();
 }
@@ -40,7 +27,7 @@ int main()
     {
         string s;
         cin >> s;
-        if (isValid(s))
+        if (isElimination(s))
         {
             cout << "YES" << endl;
         }
