@@ -13,6 +13,12 @@ public:
         this->right = NULL;
     }
 };
+
+// Pre-Order Print in Binary Tree: 
+void pre_Order_Print(Node *root)
+{
+
+}
 int main()
 {
     Node *root = new Node(10);
@@ -27,5 +33,7 @@ int main()
     a->left = c;
     b->left = d;
     b->right = e;
+
+    pre_Order_Print(root);
     return 0;
 }
