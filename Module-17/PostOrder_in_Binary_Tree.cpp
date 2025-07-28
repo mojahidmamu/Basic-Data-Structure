@@ -14,16 +14,16 @@ public:
     }
 };
 
-// Pre-Order Print in Binary Tree: 
-void IN_Order_Print(Node *root)
+// Pre-Order Print in Binary Tree:
+void Post_Order_Print(Node *root)
 {
     if (root == NULL)
     {
-        return ;
+        return;
     }
-    IN_Order_Print(root->left);  // print > left
-    cout << root->val << " ";     // print-> root value
-    IN_Order_Print(root->right); // print > right
+    Post_Order_Print(root->left);  // print > left
+    Post_Order_Print(root->right); // print > right
+    cout << root->val << " ";      // print-> root value
 }
 
 int main()
@@ -41,6 +41,6 @@ int main()
     b->left = d;
     b->right = e;
 
-    IN_Order_Print(root);
+    Post_Order_Print(root);
     return 0;
 }
