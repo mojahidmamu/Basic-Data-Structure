@@ -24,8 +24,8 @@ void pre_Order_Print(Node *root)
     cout << root->val << " ";     // print-> root value
     pre_Order_Print(root->left);  // print > left
     pre_Order_Print(root->right); // print > right
-
 }
+
 int main()
 {
     Node *root = new Node(10);
