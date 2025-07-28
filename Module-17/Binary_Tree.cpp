@@ -11,7 +11,11 @@ public:
         this->next = NULL;
     }
 };
-
+/**
+ * 1. There is no way to back in Binary Tree.
+ * 2. Binary Tree has only two child, 
+ * There is no way to find any Name: Abdullah all Mojahid.
+ */
 int main()
 {
     
