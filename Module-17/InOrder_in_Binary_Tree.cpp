@@ -14,7 +14,7 @@ public:
     }
 };
 
-// Pre-Order Print in Binary Tree: 
+// IN-Order Print in Binary Tree: 
 void IN_Order_Print(Node *root)
 {
     if (root == NULL)
