@@ -27,5 +27,11 @@ int main()
     Node *c = new Node(40);
     Node *d = new Node(50);
     Node *e = new Node(60);
+
+    root->left = a;
+    root->right = b;
+    a->left = c;
+    b->left = d; 
+    b->right = e;
     return 0;
 }
