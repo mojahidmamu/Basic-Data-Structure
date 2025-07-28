@@ -21,8 +21,8 @@ void IN_Order_Print(Node *root)
     {
         return ;
     }
-    cout << root->val << " ";     // print-> root value
     IN_Order_Print(root->left);  // print > left
+    cout << root->val << " ";     // print-> root value
     IN_Order_Print(root->right); // print > right
 }
 
