@@ -15,7 +15,7 @@ public:
 };
 int main()
 {
-     Node *root = new Node(10);
+    Node *root = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
     Node *c = new Node(40);
@@ -25,7 +25,7 @@ int main()
     root->left = a;
     root->right = b;
     a->left = c;
-    b->left = d; 
+    b->left = d;
     b->right = e;
     return 0;
 }
