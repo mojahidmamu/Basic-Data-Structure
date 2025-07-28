@@ -13,6 +13,19 @@ public:
         this->right = NULL;
     }
 };
+
+// Pre-Order Print in Binary Tree: 
+void IN_Order_Print(Node *root)
+{
+    if (root == NULL)
+    {
+        return ;
+    }
+    cout << root->val << " ";     // print-> root value
+    IN_Order_Print(root->left);  // print > left
+    IN_Order_Print(root->right); // print > right
+}
+
 int main()
 {
     Node *root = new Node(10);
@@ -27,5 +40,7 @@ int main()
     a->left = c;
     b->left = d;
     b->right = e;
+
+    IN_Order_Print(root);
     return 0;
 }
