@@ -33,7 +33,28 @@ void input_binary_tree()
         Node *f = q.front();
         q.pop();
         // Step- 2.
-        cout << f->val << " ";
+        int l, r;
+        cin >> l >> r;
+        Node *myLeft, *myRight;
+        if (l == -1)
+        {
+            myLeft = NULL;
+        }
+        else
+        {
+            myLeft = new Node(l);
+        }
+        // 
+        if (r == -1)
+        {
+            myRight = NULL;
+        }
+        else
+        {
+            myRight = new Node(r);
+        }
+
+        // cout << f->val << " ";
         // Step- 3.
         if (f->left != NULL)
         {
@@ -56,11 +77,11 @@ int main()
     Node *d = new Node(50);
     Node *e = new Node(60);
 
-    root->left = a;
-    root->right = b;
-    a->left = c;
-    b->left = d;
-    b->right = e;
+    // root->left = a;
+    // root->right = b;
+    // a->left = c;
+    // b->left = d;
+    // b->right = e;
 
     return 0;
 }
