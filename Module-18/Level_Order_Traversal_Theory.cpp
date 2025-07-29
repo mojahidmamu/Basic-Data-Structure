@@ -19,6 +19,12 @@ void level_order(Node *root)
 {
     queue<Node *> q;
     q.push(root);
+    if (root == NULL)
+    {
+        cout << "No Tree" << endl;
+        return;
+    }
+    
     while (!q.empty())
     {
         // Step- 1.
