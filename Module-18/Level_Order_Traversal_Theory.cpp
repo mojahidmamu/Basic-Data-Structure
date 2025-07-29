@@ -24,7 +24,7 @@ void level_order(Node *root)
         cout << "No Tree" << endl;
         return;
     }
-    
+
     while (!q.empty())
     {
         // Step- 1.
@@ -41,7 +41,7 @@ void level_order(Node *root)
         {
             q.push(f->right);
         }
-        }
+    }
 }
 
 int main()
