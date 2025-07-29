@@ -18,7 +18,7 @@ public:
         this->right = NULL;
     }
 };
-
+// Root হতে সবচেয়ে দূরের Node এর মাঝে যত সংখ্যক Node আছে তাকে ঐ Binary Tree এর Maximum Node বলা হয়ে থাকে। 
 int main()
 {
     Node *root = new Node(10);
