@@ -15,15 +15,10 @@ public:
 };
 
 // Pre-Order Print in Binary Tree: 
-void pre_Order_Print(Node *root)
+void level_order(Node *root)
 {
-    if (root == NULL)
-    {
-        return ;
-    }
-    cout << root->val << " ";     // print-> root value
-    pre_Order_Print(root->left);  // print > left
-    pre_Order_Print(root->right); // print > right
+     queue<Node *> q;
+     q.push(root);
 }
 
 int main()
@@ -41,6 +36,6 @@ int main()
     b->left = d;
     b->right = e;
 
-    pre_Order_Print(root);
+    level_order(root);
     return 0;
 }
