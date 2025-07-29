@@ -15,17 +15,29 @@ public:
 };
 
 // input from user: Binary Tree>>>
-Node* input_binary_tree()
+Node *input_binary_tree()
 {
     int val;
     cin >> val;
-    Node *root = new Node(val);
+    Node *root;
+    if (val == -1)
+    {
+        root = NULL;
+    }
+    else
+    {
+        Node *root = new Node(val);
+    }
     queue<Node *> q;
-    q.push(root);
+    // if (root)
+    // {
+    //     q.push(root);
+    // }
+
     if (root == NULL)
     {
         cout << "No Tree" << endl;
-        return;
+        return 0;
     }
     while (!q.empty())
     {
@@ -47,7 +59,7 @@ Node* input_binary_tree()
         //
         if (r == -1)
         {
-            myRight = NULL; 
+            myRight = NULL;
         }
         else
         {
@@ -102,11 +114,8 @@ void level_order(Node *root)
 int main()
 {
     // input_binary_tree();
-   Node *root = input_binary_tree();
-   level_order(root);
-
-
-    
+    Node *root = input_binary_tree();
+    level_order(root);
 
     return 0;
 }
