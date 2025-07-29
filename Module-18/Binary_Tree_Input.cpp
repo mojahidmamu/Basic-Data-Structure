@@ -14,8 +14,15 @@ public:
     }
 };
 
+// input from user: Binary Tree>>>
+void input_binary_tree()
+{
+
+}
+
 int main()
 {
+    input_binary_tree();
     Node *root = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
