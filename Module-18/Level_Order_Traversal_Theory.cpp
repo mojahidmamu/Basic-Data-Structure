@@ -27,9 +27,15 @@ void level_order(Node *root)
         // Step- 2.
         cout << f->val << " ";
         // Step- 3.
-        q.push(f->left);
-        q.push(f->right);
-    }
+        if (f->left != NULL)
+        {
+            q.push(f->left);
+        }
+        if (f->right != NULL)
+        {
+            q.push(f->right);
+        }
+        }
 }
 
 int main()
