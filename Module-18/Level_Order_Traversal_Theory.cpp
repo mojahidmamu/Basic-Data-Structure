@@ -14,7 +14,7 @@ public:
     }
 };
 
-// Pre-Order Print in Binary Tree:
+// Order level Traversal in Binary Tree:
 void level_order(Node *root)
 {
     queue<Node *> q;

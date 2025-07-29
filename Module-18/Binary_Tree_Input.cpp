@@ -14,36 +14,6 @@ public:
     }
 };
 
-// Pre-Order Print in Binary Tree:
-void level_order(Node *root)
-{
-    queue<Node *> q;
-    q.push(root);
-    if (root == NULL)
-    {
-        cout << "No Tree" << endl;
-        return;
-    }
-    
-    while (!q.empty())
-    {
-        // Step- 1.
-        Node *f = q.front();
-        q.pop();
-        // Step- 2.
-        cout << f->val << " ";
-        // Step- 3.
-        if (f->left != NULL)
-        {
-            q.push(f->left);
-        }
-        if (f->right != NULL)
-        {
-            q.push(f->right);
-        }
-        }
-}
-
 int main()
 {
     Node *root = new Node(10);
@@ -59,6 +29,6 @@ int main()
     b->left = d;
     b->right = e;
 
-    level_order(root);
+    
     return 0;
 }
