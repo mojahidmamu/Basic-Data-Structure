@@ -14,11 +14,22 @@ public:
     }
 };
 
-// Pre-Order Print in Binary Tree: 
+// Pre-Order Print in Binary Tree:
 void level_order(Node *root)
 {
-     queue<Node *> q;
-     q.push(root);
+    queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        // Step- 1.
+        Node *f = q.front();
+        q.pop();
+        // Step- 2.
+        cout << f->val << " ";
+        // Step- 3.
+        q.push(f->left);
+        q.push(f->right);
+    }
 }
 
 int main()
