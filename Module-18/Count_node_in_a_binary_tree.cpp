@@ -1,41 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node {
+class Node
+{
 public:
     int val;
     Node *left;
     Node *right;
 
-    Node(int val) {
+    Node(int val)
+    {
         this->val = val;
         this->left = NULL;
         this->right = NULL;
     }
 };
 
-Node *input_binary_tree() {
+Node *input_binary_tree()
+{
     int val;
     cin >> val;
 
-    if (val == -1) return NULL;
+    if (val == -1)
+        return NULL;
 
     Node *root = new Node(val);
     queue<Node *> q;
     q.push(root);
 
-    while (!q.empty()) {
+    while (!q.empty())
+    {
         Node *current = q.front();
         q.pop();
 
         int l, r;
         cin >> l >> r;
 
-        if (l != -1) {
+        if (l != -1)
+        {
             current->left = new Node(l);
             q.push(current->left);
         }
-        if (r != -1) {
+        if (r != -1)
+        {
             current->right = new Node(r);
             q.push(current->right);
         }
@@ -44,12 +51,19 @@ Node *input_binary_tree() {
     return root;
 }
 
-int count_nodes(Node *root) {
-    if (root == NULL) return 0;
-    return 1 + count_nodes(root->left) + count_nodes(root->right);
+int count_nodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int l = count_nodes(root->left);
+    int r = count_nodes(root->right);
+    return l + r + 1;
 }
 
-int main() {
+int main()
+{
     Node *root = input_binary_tree();
     cout << count_nodes(root) << endl;
     return 0;
