@@ -51,6 +51,7 @@ Node *input_binary_tree()
     return root;
 }
 
+// count leaf node: 
 int count_leaf_nodes(Node *root)
 {
     if (root == NULL)
