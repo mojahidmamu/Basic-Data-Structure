@@ -65,7 +65,6 @@ Node *input_binary_tree()
         {
             myRight = new Node(r);
         }
-
         p->left = myLeft;
         p->right = myRight;
         // Step- 3.
@@ -81,41 +80,21 @@ Node *input_binary_tree()
     return root;
 }
 
-// Order level Traversal in Binary Tree:
-void level_order(Node *root)
+int count_nodes(Node *root)
 {
-    queue<Node *> q;
-    q.push(root);
     if (root == NULL)
     {
-        cout << "No Tree" << endl;
-        return;
+        return 0;
     }
-
-    while (!q.empty())
-    {
-        // Step- 1.
-        Node *f = q.front();
-        q.pop();
-        // Step- 2.
-        cout << f->val << " ";
-        // Step- 3.
-        if (f->left != NULL)
-        {
-            q.push(f->left);
-        }
-        if (f->right != NULL)
-        {
-            q.push(f->right);
-        }
-    }
+    int l = count_nodes(root->left);
+    int r = count_nodes(root->right);
+    return l + r + 1;
 }
 
 int main()
 {
     // input_binary_tree();
     Node *root = input_binary_tree();
-    level_order(root);
-
+    cout << count_nodes(root);
     return 0;
 }
