@@ -51,20 +51,25 @@ Node *input_binary_tree()
     return root;
 }
 
-int count_nodes(Node *root)
+int count_leaf_nodes(Node *root)
 {
     if (root == NULL)
     {
         return 0;
     }
-    int l = count_nodes(root->left);
-    int r = count_nodes(root->right);
-    return l + r + 1;
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    
+    int l = count_leaf_nodes(root->left);
+    int r = count_leaf_nodes(root->right);
+    return l + r;
 }
 
 int main()
 {
     Node *root = input_binary_tree();
-    cout << count_nodes(root) << endl;
+    cout << count_leaf_nodes(root) << endl;
     return 0;
 }
