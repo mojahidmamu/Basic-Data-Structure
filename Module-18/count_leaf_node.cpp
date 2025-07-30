@@ -47,7 +47,6 @@ Node *input_binary_tree()
             q.push(current->right);
         }
     }
-
     return root;
 }
 

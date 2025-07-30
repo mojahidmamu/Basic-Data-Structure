@@ -14,8 +14,56 @@ public:
     }
 };
 
+// input :
+Node *input_binary_tree()
+{
+    int val;
+    cin >> val;
+
+    if (val == -1)
+        return NULL;
+
+    Node *root = new Node(val);
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        Node *current = q.front();
+        q.pop();
+
+        int l, r;
+        cin >> l >> r;
+
+        if (l != -1)
+        {
+            current->left = new Node(l);
+            q.push(current->left);
+        }
+        if (r != -1)
+        {
+            current->right = new Node(r);
+            q.push(current->right);
+        }
+    }
+    return root;
+}
+
+// max-height:
+int max_height(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int l = max_height(root->left);
+    int r = max_height(root->right);
+    int maximum = max(l, r);
+    return maximum + 1;
+}
 int main()
 {
-    
+    Node *root = input_binary_tree();
+    cout << max_height(root);
     return 0;
 }
