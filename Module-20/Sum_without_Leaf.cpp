@@ -14,8 +14,43 @@ public:
     }
 };
 
+// input :
+Node *input_binary_tree()
+{
+    int val;
+    cin >> val;
+
+    if (val == -1)
+        return NULL;
+
+    Node *root = new Node(val);
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        Node *current = q.front();
+        q.pop();
+
+        int l, r;
+        cin >> l >> r;
+
+        if (l != -1)
+        {
+            current->left = new Node(l);
+            q.push(current->left);
+        }
+        if (r != -1)
+        {
+            current->right = new Node(r);
+            q.push(current->right);
+        }
+    }
+    return root;
+}
+
 int main()
 {
-    
+     Node *root = input_binary_tree();
     return 0;
 }
