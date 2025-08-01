@@ -25,7 +25,7 @@ Node *input_binary_tree()
     }
     else
     {
-        Node *root = new Node(val);
+      root = new Node(val);
     }
     queue<Node *> q;
     if (root)
@@ -36,7 +36,7 @@ Node *input_binary_tree()
     if (root == NULL)
     {
         cout << "No Tree" << endl;
-        return 0;
+        return NULL;
     }
     while (!q.empty())
     {
