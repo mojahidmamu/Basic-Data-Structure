@@ -39,7 +39,9 @@ Node *input_binary_tree()
         q.pop();
         // Step- 2.
         int l, r;
-        cin >> l >> r;
+
+        if (!(cin >> l)) break;
+        if (!(cin >> r)) break;
         Node *myLeft, *myRight;
         if (l == -1)
         {
@@ -83,12 +85,13 @@ void count_leaf_nodes(Node *root, vector<int> &v)
     {
         return;
     }
+    count_leaf_nodes(root->left, v);
+    count_leaf_nodes(root->right, v);
     if (root->left == NULL && root->right == NULL)
     {
         v.push_back(root->val);
     }
-    count_leaf_nodes(root->left, v);
-    count_leaf_nodes(root->right, v);
+    
 }
 
 int main()
