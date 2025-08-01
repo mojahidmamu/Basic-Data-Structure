@@ -14,36 +14,67 @@ public:
     }
 };
 
-// input :
-Node *input_binary_tree()
+ Node *input_binary_tree()
 {
     int val;
     cin >> val;
-
+    Node *root;
     if (val == -1)
-        return NULL;
-
-    Node *root = new Node(val);
+    {
+        root = NULL;
+    }
+    else
+    {
+        Node *root = new Node(val);
+    }
     queue<Node *> q;
-    q.push(root);
+    if (root)
+    {
+        q.push(root);
+    }
 
+    if (root == NULL)
+    {
+        cout << "No Tree" << endl;
+        return 0;
+    }
     while (!q.empty())
     {
-        Node *current = q.front();
+        // Step- 1.
+        Node *p = q.front();
         q.pop();
-
+        // Step- 2.
         int l, r;
         cin >> l >> r;
-
-        if (l != -1)
+        Node *myLeft, *myRight;
+        if (l == -1)
         {
-            current->left = new Node(l);
-            q.push(current->left);
+            myLeft = NULL;
         }
-        if (r != -1)
+        else
         {
-            current->right = new Node(r);
-            q.push(current->right);
+            myLeft = new Node(l);
+        }
+        //
+        if (r == -1)
+        {
+            myRight = NULL;
+        }
+        else
+        {
+            myRight = new Node(r);
+        }
+
+        p->left = myLeft;
+        p->right = myRight;
+        // Step- 3.
+        if (p->left != NULL)
+        {
+            q.push(p->left);
+        }
+        if (p->right != NULL)
+        {
+            q.push(p->right);
         }
     }
     return root;
