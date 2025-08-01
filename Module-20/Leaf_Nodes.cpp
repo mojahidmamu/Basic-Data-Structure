@@ -40,8 +40,14 @@ Node *input_binary_tree()
         // Step- 2.
         int l, r;
 
-        if (!(cin >> l)) break;
-        if (!(cin >> r)) break;
+        if (!(cin >> l))
+        {
+            break;
+        }
+        if (!(cin >> r))
+        {
+            break;
+        }
         Node *myLeft, *myRight;
         if (l == -1)
         {
@@ -68,14 +74,13 @@ Node *input_binary_tree()
         {
             q.push(p->left);
         }
-        if (p ->right != NULL)
+        if (p->right != NULL)
         {
             q.push(p->right);
         }
     }
     return root;
 }
-
 
 // count leaf node:
 void count_leaf_nodes(Node *root, vector<int> &v)
@@ -91,7 +96,6 @@ void count_leaf_nodes(Node *root, vector<int> &v)
     {
         v.push_back(root->val);
     }
-    
 }
 
 int main()
