@@ -32,12 +32,6 @@ Node *input_binary_tree()
     {
         q.push(root);
     }
-
-    if (root == NULL)
-    {
-        cout << "No Tree" << endl;
-        return NULL;
-    }
     while (!q.empty())
     {
         // Step- 1.
@@ -72,7 +66,7 @@ Node *input_binary_tree()
         {
             q.push(p->left);
         }
-        if (p->right != NULL)
+        if (p ->right != NULL)
         {
             q.push(p->right);
         }
@@ -80,58 +74,32 @@ Node *input_binary_tree()
     return root;
 }
 
-// Order level Traversal in Binary Tree:
-void level_order(Node *root)
+
+// count leaf node:
+void count_leaf_nodes(Node *root, vector<int> &v)
 {
-    queue<Node *> q;
-    q.push(root);
+
     if (root == NULL)
     {
-        cout << "No Tree" << endl;
         return;
-    }
-
-    while (!q.empty())
-    {
-        // Step- 1.
-        Node *f = q.front();
-        q.pop();
-        // Step- 2.
-        cout << f->val << " ";
-        // Step- 3.
-        if (f->left != NULL)
-        {
-            q.push(f->left);
-        }
-        if (f->right != NULL)
-        {
-            q.push(f->right);
-        }
-    }
-};
-
-// max-height:
-int max_height(Node *root)
-{
-    if (root == NULL)
-    {
-        return 0;
     }
     if (root->left == NULL && root->right == NULL)
     {
-        return 0;
+        v.push_back(root->val);
     }
-    int l = max_height(root->left);
-    int r = max_height(root->right);
-    int maximum = max(l, r);
-    return maximum + 1;
-};
+    count_leaf_nodes(root->left, v);
+    count_leaf_nodes(root->right, v);
+}
 
 int main()
 {
     Node *root = input_binary_tree();
-    // level_order(root);
-    cout << max_height(root) << endl;
-   
-    return 0;
+    vector<int> leaf_nodes;
+    count_leaf_nodes(root, leaf_nodes);
+    reverse(leaf_nodes.begin(), leaf_nodes.end()); // reverse
+    for (int val : leaf_nodes)
+    {
+        cout << val << " ";
+    }
+    cout << endl;
 }
