@@ -131,7 +131,7 @@ int main()
 {
     Node *root = input_binary_tree();
     // level_order(root);
-    // cout << max_height(root) << endl;
+    cout << max_height(root) << endl;
    
     return 0;
 }
