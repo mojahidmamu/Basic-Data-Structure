@@ -108,11 +108,31 @@ void level_order(Node *root)
             q.push(f->right);
         }
     }
+};
+
+
+// max-height:
+int max_height(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 0;
+    }
+    int l = max_height(root->left);
+    int r = max_height(root->right);
+    int maximum = max(l, r);
+    return maximum + 1;
 }
+
 
 int main()
 {
     Node *root = input_binary_tree();
     level_order(root);
+    cout << max_height(root) << endl;
     return 0;
 }
