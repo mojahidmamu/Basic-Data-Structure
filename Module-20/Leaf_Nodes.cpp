@@ -25,7 +25,7 @@ Node *input_binary_tree()
     }
     else
     {
-      root = new Node(val);
+        root = new Node(val);
     }
     queue<Node *> q;
     if (root)
@@ -110,7 +110,6 @@ void level_order(Node *root)
     }
 };
 
-
 // max-height:
 int max_height(Node *root)
 {
@@ -126,13 +125,13 @@ int max_height(Node *root)
     int r = max_height(root->right);
     int maximum = max(l, r);
     return maximum + 1;
-}
-
+};
 
 int main()
 {
     Node *root = input_binary_tree();
-    level_order(root);
-    cout << max_height(root) << endl;
+    // level_order(root);
+    // cout << max_height(root) << endl;
+   
     return 0;
 }

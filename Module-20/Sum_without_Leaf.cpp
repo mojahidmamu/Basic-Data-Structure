@@ -49,8 +49,26 @@ Node *input_binary_tree()
     return root;
 }
 
+int sum_non_leaf_node(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 0;
+    }
+    int left_sum = sum_non_leaf_node(root->left);
+    int right_sum = sum_non_leaf_node(root->right);
+    int res = root->val + left_sum + right_sum;
+    return res;
+}
+
 int main()
 {
-     Node *root = input_binary_tree();
+    Node *root = input_binary_tree();
+    int result = sum_non_leaf_node(root);
+    cout << result << endl;
     return 0;
 }
