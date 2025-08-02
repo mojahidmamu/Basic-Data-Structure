@@ -49,13 +49,47 @@ Node *input_binary_tree()
     return root;
 }
 
-
-void traverse_right(Node *root) {
-
+void traverse_right(Node *root)
+{
+    while (root != NULL)
+    {
+        cout << root->val << " ";
+        if (root->right)
+        {
+            root = root->right;
+        }
+        else
+        {
+            root = root->left;
+        }
+    }
 }
+
+void traverse_left(Node *root)
+{
+    while (root != NULL)
+    {
+        cout << root->val << " ";
+        if (root->left)
+        {
+            root = root->left;
+        }
+        else
+        {
+            root = root->right;
+        }
+    }
+}
+
 int main()
 {
     Node *root = input_binary_tree();
-    traverse_right(root);
+    if (root)
+    {
+        traverse_left(root->left);
+        cout << root->val << " ";
+        traverse_right(root->right);
+    }
+
     return 0;
 }
