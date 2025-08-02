@@ -49,8 +49,13 @@ Node *input_binary_tree()
     return root;
 }
 
+
+void traverse_right(Node *root) {
+
+}
 int main()
 {
-     Node *root = input_binary_tree();
+    Node *root = input_binary_tree();
+    traverse_right(root);
     return 0;
 }
