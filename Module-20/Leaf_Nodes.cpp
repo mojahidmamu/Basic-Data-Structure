@@ -85,7 +85,6 @@ Node *input_binary_tree()
 // count leaf node:
 void count_leaf_nodes(Node *root, vector<int> &v)
 {
-
     if (root == NULL)
     {
         return;
@@ -110,3 +109,4 @@ int main()
     }
     cout << endl;
 }
+// Accepted: 
