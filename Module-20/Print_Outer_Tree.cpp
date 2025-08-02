@@ -67,20 +67,19 @@ void traverse_right(Node *root)
 
 void traverse_left(Node *root)
 {
-    stack<int> s;
-    while (root != NULL)
+    if (root == NULL)
+        return;
+
+    if (root->left)
     {
-        s.push(root->val);
-        if (root->left)
-            root = root->left;
-        else
-            root = root->right;
+        traverse_left(root->left);
     }
-    while (!s.empty())
+    else if (root->right)
     {
-        cout << s.top() << " ";
-        s.pop();
+        traverse_left(root->right);
     }
+
+    cout << root->val << " ";
 }
 
 int main()
