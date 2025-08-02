@@ -80,16 +80,56 @@ Node *input_binary_tree()
     return root;
 }
 
-// Order level Traversal in Binary Tree:
+// Order level:
 void print_node_at_level(Node *root, int target_level)
 {
-     
+    if (!root)
+    {
+        cout << "Invalid" << endl;
+        return;
+    }
+
+    queue<pair<Node *, int>> q;
+    q.push({root, 0});
+    bool found = false;
+
+    while (!q.empty())
+    {
+        Node *current = q.front().first;
+        int level = q.front().second;
+
+        if (level == target_level)
+        {
+            cout << current->val << " ";
+            found = true;
+        }
+        else if (level > target_level)
+        {
+            break;
+        }
+        if (current->left)
+        {
+            q.push({current->left, level + 1});
+        }
+        if (current->right)
+        {
+            q.push({current->right, level + 1});
+        }
+    }
+
+    //
+    if (!found)
+    {
+        cout << "Invalid" << endl;
+    }
+    cout << endl;
+    
 }
 int main()
 {
     Node *root = input_binary_tree();
     int level;
-    cin >>  level;
+    cin >> level;
     print_node_at_level(root, level);
     return 0;
 }
