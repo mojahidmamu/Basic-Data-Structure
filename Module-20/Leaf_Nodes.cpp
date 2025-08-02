@@ -103,7 +103,7 @@ int main()
     Node *root = input_binary_tree();
     vector<int> leaf_nodes;
     count_leaf_nodes(root, leaf_nodes);
-    reverse(leaf_nodes.begin(), leaf_nodes.end()); // reverse
+    sort(leaf_nodes.rbegin(), leaf_nodes.rend()); 
     for (int val : leaf_nodes)
     {
         cout << val << " ";
