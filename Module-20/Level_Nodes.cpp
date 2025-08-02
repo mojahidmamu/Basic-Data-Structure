@@ -14,43 +14,104 @@ public:
     }
 };
 
-// input :
 Node *input_binary_tree()
 {
     int val;
     cin >> val;
-
+    Node *root;
     if (val == -1)
-        return NULL;
-
-    Node *root = new Node(val);
+    {
+        root = NULL;
+    }
+    else
+    {
+        root = new Node(val);
+    }
     queue<Node *> q;
-    q.push(root);
+    if (root)
+    {
+        q.push(root);
+    }
 
+    if (root == NULL)
+    {
+        cout << "No Tree" << endl;
+        return NULL;
+    }
     while (!q.empty())
     {
-        Node *current = q.front();
+        // Step- 1.
+        Node *p = q.front();
         q.pop();
-
+        // Step- 2.
         int l, r;
         cin >> l >> r;
-
-        if (l != -1)
+        Node *myLeft, *myRight;
+        if (l == -1)
         {
-            current->left = new Node(l);
-            q.push(current->left);
+            myLeft = NULL;
         }
-        if (r != -1)
+        else
         {
-            current->right = new Node(r);
-            q.push(current->right);
+            myLeft = new Node(l);
+        }
+        //
+        if (r == -1)
+        {
+            myRight = NULL;
+        }
+        else
+        {
+            myRight = new Node(r);
+        }
+
+        p->left = myLeft;
+        p->right = myRight;
+        // Step- 3.
+        if (p->left != NULL)
+        {
+            q.push(p->left);
+        }
+        if (p->right != NULL)
+        {
+            q.push(p->right);
         }
     }
     return root;
 }
 
+// Order level Traversal in Binary Tree:
+void level_order(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+    if (root == NULL)
+    {
+        cout << "No Tree" << endl;
+        return;
+    }
+
+    while (!q.empty())
+    {
+        // Step- 1.
+        Node *f = q.front();
+        q.pop();
+        // Step- 2.
+        cout << f->val << " ";
+        // Step- 3.
+        if (f->left != NULL)
+        {
+            q.push(f->left);
+        }
+        if (f->right != NULL)
+        {
+            q.push(f->right);
+        }
+    }
+}
 int main()
 {
     Node *root = input_binary_tree();
+    level_order(root);
     return 0;
 }
