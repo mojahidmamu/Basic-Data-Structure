@@ -51,6 +51,6 @@ Node *input_binary_tree()
 
 int main()
 {
-     Node *root = input_binary_tree();
+    Node *root = input_binary_tree();
     return 0;
 }
