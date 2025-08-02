@@ -97,6 +97,7 @@ void print_node_at_level(Node *root, int target_level)
     {
         Node *current = q.front().first;
         int level = q.front().second;
+        q.pop();
 
         if (level == target_level)
         {
@@ -123,7 +124,7 @@ void print_node_at_level(Node *root, int target_level)
         cout << "Invalid" << endl;
     }
     cout << endl;
-    
+
 }
 int main()
 {
