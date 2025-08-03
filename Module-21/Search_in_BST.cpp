@@ -25,14 +25,13 @@ Node *input_binary_tree()
     }
     else
     {
-      root = new Node(val);
+        root = new Node(val);
     }
     queue<Node *> q;
     if (root)
     {
         q.push(root);
     }
-
 
     if (root == NULL)
     {
@@ -66,7 +65,6 @@ Node *input_binary_tree()
             myRight = new Node(r);
         }
 
-
         p->left = myLeft;
         p->right = myRight;
         // Step- 3.
@@ -80,11 +78,26 @@ Node *input_binary_tree()
         }
     }
     return root;
-}
+};
 
+// search :
+bool search_in_binary(Node *root)
+{
+}
 
 int main()
 {
-    Node *root =  input_binary_tree();
+    Node *root = input_binary_tree();
+    int val;
+    cin >> val;
+    bool result = search_in_binary(root);
+    if (result == true)
+    {
+        cout << "Found" << endl;
+    }
+    else
+    {
+        cout << "Not Found" << endl;
+    }
     return 0;
 }
