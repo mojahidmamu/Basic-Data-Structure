@@ -91,14 +91,14 @@ bool search_in_binary(Node *root, int val)
     {
         return true;
     }
-    // 
+    //
     if (val < root->val)
     {
-        search_in_binary(root->left, val);
+        return search_in_binary(root->left, val);
     }
-    else if (val > root->val)
+    else 
     {
-        search_in_binary(root->right, val);
+        return search_in_binary(root->right, val);
     }
 }
 
