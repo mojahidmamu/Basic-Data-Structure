@@ -81,8 +81,20 @@ Node *input_binary_tree()
 };
 
 // search :
-bool search_in_binary(Node *root)
+bool search_in_binary(Node *root, int val)
 {
+    if (root == NULL)
+    {
+        return false;
+    }
+    if (root->val == val)
+    {
+        return true;
+    }
+    search_in_binary(root->left, val);
+    search_in_binary(root->right, val);
+    
+    
 }
 
 int main()
@@ -90,7 +102,7 @@ int main()
     Node *root = input_binary_tree();
     int val;
     cin >> val;
-    bool result = search_in_binary(root);
+    bool result = search_in_binary(root, val);
     if (result == true)
     {
         cout << "Found" << endl;
