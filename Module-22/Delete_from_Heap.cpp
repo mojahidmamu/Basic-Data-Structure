@@ -38,7 +38,7 @@ void delete_heap(vector<int> &v)
     int cur_idx = 0;
     int left_idx = (cur_idx * 2) + 1;
     int right_idx = (cur_idx * 2) + 2;
-    int left_val, right_val;
+    int left_val = INT_MIN, right_val = INT_MIN;
     if (left_idx < v.size())
     {
         left_val = v[left_idx];
@@ -47,6 +47,12 @@ void delete_heap(vector<int> &v)
     {
         right_val = v[right_idx];
     }
+
+    if (left_val > right_val && left_val > v[cur_idx])
+    {
+         swap(v[cur_idx], left_val);
+    }
+    
 }
 
 int main()
