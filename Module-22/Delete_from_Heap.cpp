@@ -30,10 +30,13 @@ void print_heap(vector<int> &v, int n)
     }
 }
 
-// delete heap: 
+// delete heap:
 void delete_heap(vector<int> &v)
 {
-
+    int first_value = v[0];
+    // int last_value = v.back();     // optoin-A: for access first value
+    int last_value = v[v.size() - 1]; // optoin-B: for access first value
+    first_value = last_value;
 }
 
 int main()
