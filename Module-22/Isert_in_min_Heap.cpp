@@ -17,7 +17,7 @@ int main()
     while (current_idx != 0)
     {
         int par_idx = (current_idx - 1) / 2;
-        if (v[par_idx] < v[current_idx])
+        if (v[par_idx] >= v[current_idx])
         {
             swap(v[par_idx], v[current_idx]);
         }
