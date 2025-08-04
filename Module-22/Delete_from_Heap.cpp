@@ -33,13 +33,14 @@ void print_heap(vector<int> &v)
 // delete heap:
 void delete_heap(vector<int> &v)
 {
-    cout << v[0] << "Deleted--->" << endl;
+    cout << endl;
+    cout << v[0] << " Deleted--->" << endl;
     v[0] = v.back();
     v.pop_back();
     int cur_idx = 0;
-    int left_idx = (cur_idx * 2) + 1;
     while (true)
     {
+        int left_idx = (cur_idx * 2) + 1;
         int right_idx = (cur_idx * 2) + 2;
         int left_val = INT_MIN, right_val = INT_MIN;
         if (left_idx < v.size())
