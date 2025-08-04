@@ -1,0 +1,1 @@
+{"name":"Local: Delete_from_Heap","url":"d:\\PHITRON\\Basic Data Structure\\Module-22\\Delete_from_Heap.cpp","tests":[{"id":1754281780238,"input":"11\n42 21 17 9 13 11 6 2 3 7 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PHITRON\\Basic Data Structure\\Module-22\\Delete_from_Heap.cpp","group":"local","local":true}
