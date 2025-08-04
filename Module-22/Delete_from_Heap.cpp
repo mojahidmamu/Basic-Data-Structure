@@ -22,17 +22,18 @@ void insert_in_heap(vector<int> &v, int val)
 }
 
 // print:
-void print_heap(vector<int> &v, int n)
+void print_heap(vector<int> &v)
 {
-    for (int i = 0; i < n; i++)
+    for (int x : v)
     {
-        cout << v[i] << " ";
+        cout << x << " ";
     }
 }
 
 // delete heap:
 void delete_heap(vector<int> &v)
 {
+    cout << v[0] << "Deleted--->" << endl;
     v[0] = v.back();
     v.pop_back();
     int cur_idx = 0;
@@ -78,7 +79,8 @@ int main()
         cin >> val;
         insert_in_heap(v, val);
     }
+    print_heap(v);
     delete_heap(v);
-    // print_heap(v, n);
+    print_heap(v);
     return 0;
 }
