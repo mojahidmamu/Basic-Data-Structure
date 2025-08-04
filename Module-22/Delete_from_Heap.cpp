@@ -1,10 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// insert at vector: 
-void insert_in_heap(vector<int> &v, val)
+// insert at vector:
+void insert_in_heap(vector<int> &v, int val)
 {
-    
+    v.push_back(val);
+    int current_idx = v.size() - 1;
+    while (current_idx != 0)
+    {
+        int par_idx = (current_idx - 1) / 2;
+        if (v[par_idx] < v[current_idx])
+        {
+            swap(v[par_idx], v[current_idx]);
+        }
+        else
+        {
+            break;
+        }
+        current_idx = par_idx;
+    }
 }
 int main()
 {
@@ -15,8 +29,8 @@ int main()
     {
         int val;
         cin >> val;
-
+        insert_in_heap(v, val);
     }
-    
+
     return 0;
 }
