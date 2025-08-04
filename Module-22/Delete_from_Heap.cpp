@@ -20,6 +20,15 @@ void insert_in_heap(vector<int> &v, int val)
         current_idx = par_idx;
     }
 }
+
+// print:
+void print_heap(vector<int> &v, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << v[i] << " ";
+    }
+}
 int main()
 {
     vector<int> v;
@@ -31,6 +40,6 @@ int main()
         cin >> val;
         insert_in_heap(v, val);
     }
-
+    print_heap(v, n);
     return 0;
 }
