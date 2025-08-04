@@ -29,6 +29,13 @@ void print_heap(vector<int> &v, int n)
         cout << v[i] << " ";
     }
 }
+
+// delete heap: 
+void delete_heap(vector<int> &v)
+{
+
+}
+
 int main()
 {
     vector<int> v;
@@ -40,6 +47,7 @@ int main()
         cin >> val;
         insert_in_heap(v, val);
     }
+    delete_heap(v);
     print_heap(v, n);
     return 0;
 }
