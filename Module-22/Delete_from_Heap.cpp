@@ -34,7 +34,7 @@ void print_heap(vector<int> &v)
 void delete_heap(vector<int> &v)
 {
     cout << endl;
-    cout << v[0] << " Deleted--->" << endl;
+    cout  << "Afted Deleted---> "<< v[0] << endl;
     v[0] = v.back();
     v.pop_back();
     int cur_idx = 0;
