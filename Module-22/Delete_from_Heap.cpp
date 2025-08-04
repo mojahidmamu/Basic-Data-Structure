@@ -33,10 +33,20 @@ void print_heap(vector<int> &v, int n)
 // delete heap:
 void delete_heap(vector<int> &v)
 {
-    int first_value = v[0];
-    // int last_value = v.back();     // optoin-A: for access first value
-    int last_value = v[v.size() - 1]; // optoin-B: for access first value
-    first_value = last_value;
+    v[0] = v.back();
+    v.pop_back();
+    int cur_idx = 0;
+    int left_idx = (cur_idx * 2) + 1;
+    int right_idx = (cur_idx * 2) + 2;
+    int left_val, right_val;
+    if (left_idx < v.size())
+    {
+        left_val = v[left_idx];
+    }
+    if (right_idx < v.size())
+    {
+        right_val = v[right_idx];
+    }
 }
 
 int main()
@@ -51,6 +61,6 @@ int main()
         insert_in_heap(v, val);
     }
     delete_heap(v);
-    print_heap(v, n);
+    // print_heap(v, n);
     return 0;
 }
