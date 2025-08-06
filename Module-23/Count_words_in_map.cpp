@@ -6,7 +6,7 @@ int main()
     getline(cin, sentence);
     string word;
     stringstream ss(sentence);
-    map<string, int> mp;
+    map<string, int> mp; // map-> input: 
     while (ss >> word)
     {
         mp[word]++;
