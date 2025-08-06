@@ -15,10 +15,15 @@ public:
 };
 int main()
 {
+    priority_queue<int> pq;
+
     int T;
     cin >> T;
     while (T--)
     {
+        string name;
+        int roll, marks;
+        cin >> name >> roll >> marks;
     }
 
     return 0;
