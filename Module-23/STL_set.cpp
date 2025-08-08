@@ -11,9 +11,9 @@ int main()
         cin >> val;
         s.insert(val); // insert value in set
     }
-    for (auto it = s.begin(); it != s.end(); it++)
+    for (int x : s)
     {
-        cout << *it << " ";
+        cout << x << endl;
     }
 
     return 0;
