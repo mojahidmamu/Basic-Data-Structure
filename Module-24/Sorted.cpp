@@ -2,26 +2,27 @@
 using namespace std;
 int main()
 {
-    set<int> s; // set -> DSA
     int TestCase;
     cin >> TestCase;
     while (TestCase--)
     {
         int N;
         cin >> N;
-        int arr[N];
-
+        set<int> s;  
         for (int i = 0; i < N; i++)
         {
-            cin >> arr[i];
+            int val;
+            cin >> val;
+            s.insert(val);
         }
-        sort(arr, arr + N);
-        for (int i = 0; i < N; i++)
+
+        for (int x : s)
         {
-            cout << arr[i] << " ";
+            cout << x << " ";
         }
         cout << endl;
     }
 
     return 0;
 }
+// Accepted: 
