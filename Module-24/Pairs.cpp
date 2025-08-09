@@ -4,7 +4,7 @@ bool compare(pair<string, int> a, pair<string, int> b)
 {
     if (a.first == b.first)
     {
-        return b.second > a.second;
+        return  a.second > b.second ;
     }
     else
     {
@@ -24,7 +24,7 @@ int main()
 
     sort(arr.begin(), arr.end(), compare);
 
-    for (auto p : arr)
+    for (auto &p : arr)
     {
         cout << p.first << " " << p.second << endl;
     }
