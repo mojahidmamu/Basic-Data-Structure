@@ -8,22 +8,25 @@ public:
     int marks;
 };
 
-bool compare(Student a, Student b)
+
+struct Compare
 {
-    if (a.marks != b.marks)
+    bool operator()(Student a, Student b)
     {
-        return a.marks < b.marks;
+        if (a.marks != b.marks)
+        {
+            return a.marks < b.marks;
+        }
+        else
+        {
+            return a.roll > b.roll;
+        }
     }
-    else
-    {
-        return a.roll > b.roll;
-    }
-}
+};
 
 int main()
 {
-    // map<string, int, int> mp;
-    priority_queue<Student, vector<Student>, compare> pq;
+    priority_queue<Student, vector<Student>, Compare> pq;
     int N;
     cin >> N;
     for (int i = 0; i < N; i++)
