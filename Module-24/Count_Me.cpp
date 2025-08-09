@@ -6,7 +6,15 @@ int main()
     cin >> TestCase;
     while (TestCase--)
     {
-        
+        string sentence;
+        getline(cin, sentence);
+        stringstream ss(sentence);
+        string word;
+        while (ss >> word)
+        {
+            cout << word << " ";
+        }
+        cout << endl;
     }
     return 0;
 }
