@@ -2,16 +2,28 @@
 using namespace std;
 class Student
 {
-    public: 
+public:
     string name;
     int roll;
     int marks;
 };
 
+bool compare(Student a, Student b)
+{
+    if (a.marks != b.marks)
+    {
+        return a.marks < b.marks;
+    }
+    else
+    {
+        return a.roll > b.roll;
+    }
+}
+
 int main()
 {
     // map<string, int, int> mp;
-    priority_queue<string, int, int> pq;
+    priority_queue<Student, vector<Student>, compare> pq;
     int N;
     cin >> N;
     for (int i = 0; i < N; i++)
@@ -29,21 +41,52 @@ int main()
         cin >> cmd;
         if (cmd == 0)
         {
-            /* code */
+            Student s;
+            cin >> s.name >> s.roll >> s.marks;
+            pq.push(s);
+            if (pq.empty())
+            {
+                cout << "Empty" << endl;
+            }
+            else
+            {
+                Student top = pq.top();
+                cout << top.name << " " << top.roll << " " << top.marks << endl;
+            }
         }
         else if (cmd == 1)
         {
-            /* code */
+            if (pq.empty())
+            {
+                cout << "Empty" << endl;
+            }
+            else
+            {
+                Student top = pq.top();
+                cout << top.name << " " << top.roll << " " << top.marks << endl;
+            }
         }
         else if (cmd == 2)
         {
-            /* code */
+            if (pq.empty())
+            {
+                cout << "Empty" << endl;
+            }
+            else
+            {
+                pq.pop();
+                if (pq.empty())
+                {
+                    cout << "Empty" << endl;
+                }
+                else
+                {
+                    Student top = pq.top();
+                    cout << top.name << " " << top.roll << " " << top.marks << endl;
+                }
+            }
         }
-        
-        
-        
     }
-    
 
     return 0;
 }
