@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
     list<int> l;
-    
+
     int N;
     cin >> N;
 
@@ -13,6 +13,7 @@ int main()
         cin >> val;
         l.push_back(val);
     }
+    sort(l.begin(), l.end());
 
     int Q;
     cin >> Q;
@@ -23,18 +24,14 @@ int main()
 
         if (cmd == 0)
         {
-            int x;
-            cin >> x;
-            l.push_back(x);
-            if (l.empty())
-            {
-                cout << "Empty" << endl;
+            int x; cin >> x;
+            auto it = l.begin();
+            while (it != l.end() && *it < x) {
+                ++it;
             }
-            else
-            {
-                auto minIt = min_element(l.begin(), l.end());
-                cout << *minIt << endl;
-            }
+            l.insert(it, x);
+            cout << *l.begin() << "\n";
+
         }
         else if (cmd == 1)
         {
@@ -44,8 +41,7 @@ int main()
             }
             else
             {
-                auto minIt = min_element(l.begin(), l.end());
-                cout << *minIt << endl;
+                cout << *l.begin() << endl;
             }
         }
         else if (cmd == 2)
@@ -56,20 +52,18 @@ int main()
             }
             else
             {
-                auto minIt = min_element(l.begin(), l.end());
-                l.erase(minIt);
+
+                l.erase(l.begin());
                 if (l.empty())
                 {
                     cout << "Empty" << endl;
                 }
                 else
                 {
-                    auto newMinIt = min_element(l.begin(), l.end());
-                    cout << *newMinIt << endl;
+                    cout << *l.begin() << endl;
                 }
             }
         }
-        
     }
 
     return 0;
