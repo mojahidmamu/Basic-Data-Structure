@@ -2,10 +2,10 @@
 using namespace std;
 int main()
 {
+    list<int> l;
+    
     int N;
     cin >> N;
-
-    list<int> l(N);
 
     for (int i = 0; i < N; i++)
     {
@@ -69,10 +69,7 @@ int main()
                 }
             }
         }
-        else if (l.empty())
-        {
-            cout << "Empty" << endl;
-        }
+        
     }
 
     return 0;
