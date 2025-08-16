@@ -56,8 +56,8 @@ int get_length(Node *head)
 
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    Node *head1 = NULL;
+    Node *tail1 = NULL;
 
     int val;
     while (cin >> val && val != -1)
@@ -66,7 +66,7 @@ int main()
         // {
         //     break;
         // }
-        insert_at_tail(head, tail, val);
+        insert_at_tail(head1, tail1, val);
     }
     //////
     Node *head2 = NULL;
@@ -80,7 +80,7 @@ int main()
     // print_liked_list(head);
     // print_liked_list(head2);
 
-    int len1 = get_length(head);
+    int len1 = get_length(head1);
     int len2 = get_length(head2);
     if (len1 == len2)
     {

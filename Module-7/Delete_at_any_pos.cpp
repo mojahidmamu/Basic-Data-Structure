@@ -31,18 +31,6 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 // This is a function, which delete specific node: (specific position node at Linked_List):-
 void delete_at_any_pos(Node *&head, int position)
 {
-    if (head = NULL)
-    {
-        return;
-    }
-    if (position == 1)
-    {
-        Node *delete_node = head;
-        head = head->next;
-        delete delete_node;
-        return;
-    }
-
     Node *tmp = head;
     for (int i = 1; i < position; i++)
     {
@@ -50,7 +38,6 @@ void delete_at_any_pos(Node *&head, int position)
         {
             return;
         }
-
         tmp = tmp->next;
     }
     if (tmp->next == NULL)
