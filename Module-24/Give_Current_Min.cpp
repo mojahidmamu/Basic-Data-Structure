@@ -2,18 +2,20 @@
 using namespace std;
 int main()
 {
-    list<int> l;
+    set<int> s;
+    map<int, int> freq;
 
     int N;
     cin >> N;
 
+   
     for (int i = 0; i < N; i++)
     {
         int val;
         cin >> val;
-        l.push_back(val);
+        s.insert(val);
+        freq[val]++;
     }
-    sort(l.begin(), l.end());
 
     int Q;
     cin >> Q;
@@ -24,43 +26,44 @@ int main()
 
         if (cmd == 0)
         {
-            int x; cin >> x;
-            auto it = l.begin();
-            while (it != l.end() && *it < x) {
-                ++it;
-            }
-            l.insert(it, x);
-            cout << *l.begin() << "\n";
-
+            int x;
+            cin >> x;
+            s.insert(x);
+            freq[x]++;
+            cout << *s.begin() << "\n";
         }
         else if (cmd == 1)
-        {
-            if (l.empty())
+        { // print min
+            if (s.empty())
             {
-                cout << "Empty" << endl;
+                cout << "Empty\n";
             }
             else
             {
-                cout << *l.begin() << endl;
+                cout << *s.begin() << "\n";
             }
         }
         else if (cmd == 2)
-        {
-            if (l.empty())
+        { // delete min
+            if (s.empty())
             {
-                cout << "Empty" << endl;
+                cout << "Empty\n";
             }
             else
             {
-
-                l.erase(l.begin());
-                if (l.empty())
+                int mn = *s.begin();
+                freq[mn]--;
+                if (freq[mn] == 0)
                 {
-                    cout << "Empty" << endl;
+                    s.erase(mn); // remove from set if no copies left
+                }
+                if (s.empty())
+                {
+                    cout << "Empty\n";
                 }
                 else
                 {
-                    cout << *l.begin() << endl;
+                    cout << *s.begin() << "\n";
                 }
             }
         }
