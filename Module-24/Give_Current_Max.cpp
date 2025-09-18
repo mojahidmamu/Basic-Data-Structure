@@ -1,39 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Student
-{
-public:
-    string name;
-    int roll;
-    int marks;
-};
-
-
-struct Compare
-{
-    bool operator()(Student a, Student b)
-    {
-        if (a.marks != b.marks)
-        {
-            return a.marks < b.marks;
-        }
-        else
-        {
-            return a.roll > b.roll;
-        }
-    }
-};
-
 int main()
 {
-    priority_queue<Student, vector<Student>, Compare> pq;
+    auto cmp = [](const pair<int, pair<int, string>> &a,
+                  const pair<int, pair<int, string>> &b)
+    {
+        if (a.first != b.first)
+            return a.first < b.first;           // higher marks first
+        return a.second.first > b.second.first; // smaller roll first
+    };
+
+    priority_queue<
+        pair<int, pair<int, string>>,
+        vector<pair<int, pair<int, string>>>,
+        decltype(cmp)>
+        pq(cmp);
     int N;
     cin >> N;
     for (int i = 0; i < N; i++)
     {
-        Student s;
-        cin >> s.name >> s.roll >> s.marks;
-        pq.push(s);
+        string name;
+        int roll, marks;
+        cin >> name >> roll >> marks;
+        pq.push({marks, {roll, name}});
     }
 
     int Q;
@@ -44,53 +33,29 @@ int main()
         cin >> cmd;
         if (cmd == 0)
         {
-            Student s;
-            cin >> s.name >> s.roll >> s.marks;
-            pq.push(s);
-            if (pq.empty())
-            {
-                cout << "Empty" << endl;
-            }
-            else
-            {
-                Student top = pq.top();
-                cout << top.name << " " << top.roll << " " << top.marks << endl;
-            }
+            string name;
+            int roll, marks;
+            cin >> name >> roll >> marks;
+            pq.push({marks, {roll, name}});
         }
-        else if (cmd == 1)
+
+        if (cmd == 2 && !pq.empty())
         {
-            if (pq.empty())
-            {
-                cout << "Empty" << endl;
-            }
-            else
-            {
-                Student top = pq.top();
-                cout << top.name << " " << top.roll << " " << top.marks << endl;
-            }
+            pq.pop();
         }
-        else if (cmd == 2)
+
+        if (pq.empty())
         {
-            if (pq.empty())
-            {
-                cout << "Empty" << endl;
-            }
-            else
-            {
-                pq.pop();
-                if (pq.empty())
-                {
-                    cout << "Empty" << endl;
-                }
-                else
-                {
-                    Student top = pq.top();
-                    cout << top.name << " " << top.roll << " " << top.marks << endl;
-                }
-            }
+            cout << "Empty" << endl;
+        }
+        else
+        {
+            auto top = pq.top();
+            cout << top.second.second << " "; // name
+            cout << top.second.first << " ";  // roll
+            cout << top.first << endl;        // marks
         }
     }
 
     return 0;
 }
-// Accepted: 
