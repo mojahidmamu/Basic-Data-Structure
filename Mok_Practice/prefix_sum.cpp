@@ -14,10 +14,10 @@ int main()
     prefix_sum[0] = 0;
     for (int i = 1; i <= N; i++)
     {
-        prefix_sum[i] = prefix_sum[i - 1] + arr[i];
+        prefix_sum[i] = prefix_sum[i - 1] + arr[i -1];
     }
 
-    for (int i = 0; i <= N; i++)
+    for (int i = 1; i <= N; i++)
     {
         cout << prefix_sum[i] << " ";
     }
