@@ -11,12 +11,17 @@ int main()
     }
 
     int prefix_sum[N + 1];
-    for (int i = 0; i < N; i++)
+    prefix_sum[0] = 0;
+    for (int i = 1; i <= N; i++)
     {
         prefix_sum[i] = prefix_sum[i - 1] + arr[i];
     }
 
-    cout << prefix_sum << endl;
+    for (int i = 0; i <= N; i++)
+    {
+        cout << prefix_sum[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
