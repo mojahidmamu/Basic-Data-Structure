@@ -14,67 +14,36 @@ public:
     }
 };
 
+// input :
 Node *input_binary_tree()
 {
     int val;
     cin >> val;
-    Node *root;
-    if (val == -1)
-    {
-        root = NULL;
-    }
-    else
-    {
-        root = new Node(val);
-    }
-    queue<Node *> q;
-    if (root)
-    {
-        q.push(root);
-    }
 
-    if (root == NULL)
-    {
-        cout << "No Tree" << endl;
+    if (val == -1)
         return NULL;
-    }
+
+    Node *root = new Node(val);
+    queue<Node *> q;
+    q.push(root);
+
     while (!q.empty())
     {
-        // Step- 1.
-        Node *p = q.front();
+        Node *current = q.front();
         q.pop();
-        // Step- 2.
+
         int l, r;
         cin >> l >> r;
-        Node *myLeft, *myRight;
-        if (l == -1)
-        {
-            myLeft = NULL;
-        }
-        else
-        {
-            myLeft = new Node(l);
-        }
-        //
-        if (r == -1)
-        {
-            myRight = NULL;
-        }
-        else
-        {
-            myRight = new Node(r);
-        }
 
-        p->left = myLeft;
-        p->right = myRight;
-        // Step- 3.
-        if (p->left != NULL)
+        if (l != -1)
         {
-            q.push(p->left);
+            current->left = new Node(l);
+            q.push(current->left);
         }
-        if (p->right != NULL)
+        if (r != -1)
         {
-            q.push(p->right);
+            current->right = new Node(r);
+            q.push(current->right);
         }
     }
     return root;
@@ -124,7 +93,6 @@ void print_node_at_level(Node *root, int target_level)
         cout << "Invalid" << endl;
     }
     cout << endl;
-
 }
 int main()
 {
